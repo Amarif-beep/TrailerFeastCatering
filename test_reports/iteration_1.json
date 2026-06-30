@@ -1,0 +1,29 @@
+{
+  "summary": "First-finish test pass for The Hungry Trailer marketing site. All 7 backend endpoints and all listed frontend flows verified end-to-end.",
+  "tested_scope": ["backend", "frontend", "integration"],
+  "passed": [
+    "GET /api/ returns greeting 'The Hungry Trailer API — Fresh, Hot & Loaded!' (200)",
+    "GET /api/menu returns 4 categories [Jacket Potatoes, Loaded Fries, Homemade Crepes, Hungarian Street Food], 4 items each with name/desc/price (200)",
+    "POST /api/bookings valid payload returned 201 with id (uuid) and status='new'",
+    "POST /api/bookings with invalid email returned 422",
+    "POST /api/bookings with missing required fields returned 422",
+    "GET /api/bookings returned list including just-created booking (200)",
+    "POST /api/contact valid payload returned 201 with id",
+    "Home page loads; logo image present; 'COME HUNGRY. LEAVE HAPPY.' headline visible",
+    "Header nav-menu/nav-about/nav-reviews/nav-find-us/nav-booking all clickable and scroll to sections",
+    "Hero CTAs hero-cta-menu and hero-cta-book both clickable",
+    "Menu tabs menu-tab-spuds/fries/crepes/hungarian all switch items",
+    "Reviews section renders 9 review cards (review-card-0..8)",
+    "Find Us section shows phone, email and an OpenStreetMap iframe",
+    "Booking form full flow: filled all fields and submitted -> data-testid=booking-success ('BOOKING SENT!' with PartyPopper) appeared, toast 'BOOKING REQUEST SENT!' shown"
+  ],
+  "failed": [],
+  "notes": [
+    "Invalid-email UI test: browser-native HTML5 validation (input type=email) blocks submission before the request reaches the backend, so the 422 toast path is not triggered from the UI. Form correctly stays on screen and no success state appears. Backend 422 path is verified independently via curl. This is expected/acceptable behavior, not a bug.",
+    "No console / pageerror messages observed during testing."
+  ],
+  "action_items": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
