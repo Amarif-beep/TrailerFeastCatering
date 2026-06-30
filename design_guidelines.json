@@ -1,0 +1,111 @@
+{
+  "theme": "dark",
+  "archetype": "Custom: Street Art / Brutalist Fusion",
+  "design_philosophy": "A high-energy, raw, and vibrant 'Urban Canvas' look. Deep black backgrounds with cream text, punctuated by electric blue, hot pink, and warm orange graffiti splashes. Layouts are asymmetrical, mimicking a wall filled with wheatpaste posters, stickers, and spray paint. Elements are rotated, heavily textured, and unapologetically loud.",
+  "colors": {
+    "background_base": "#050505",
+    "surface_primary": "#121212",
+    "surface_secondary": "#1E1E1E",
+    "text_primary": "#E8D2A4",
+    "text_secondary": "#A3A3A3",
+    "accent_blue": "#3DB8F2",
+    "accent_pink": "#E63EBD",
+    "accent_orange": "#F26B2E",
+    "border_color": "#2A2A2A"
+  },
+  "typography": {
+    "heading_font": "Bungee",
+    "accent_font": "Permanent Marker",
+    "body_font": "Bricolage Grotesque",
+    "font_imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&display=swap');"
+    ],
+    "scale": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl tracking-tighter uppercase",
+      "h2": "text-4xl sm:text-5xl uppercase",
+      "h3": "text-2xl sm:text-3xl uppercase",
+      "body": "text-base sm:text-lg leading-relaxed",
+      "marker_accent": "font-['Permanent_Marker'] text-2xl md:text-3xl rotate-[-2deg]"
+    }
+  },
+  "layout": {
+    "spacing_system": "Generous spacing (p-8 to p-16) to allow textures and asymmetric rotations to breathe without overlapping text incorrectly.",
+    "grid_strategy": "The 'Tetris' grid. Mix wide spans and tall spans. Overlap grid items visually by using negative margins or translate transforms. Never center everything perfectly.",
+    "max_width": "max-w-7xl mx-auto"
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#E63EBD] text-black font-['Bungee'] uppercase px-8 py-4 border-2 border-black shadow-[4px_4px_0px_0px_#3DB8F2] hover:shadow-[2px_2px_0px_0px_#3DB8F2] hover:translate-y-[2px] hover:translate-x-[2px] transition-all",
+      "secondary": "bg-[#3DB8F2] text-black font-['Bungee'] uppercase px-8 py-4 border-2 border-black shadow-[4px_4px_0px_0px_#F26B2E] hover:shadow-[2px_2px_0px_0px_#F26B2E] hover:translate-y-[2px] hover:translate-x-[2px] transition-all"
+    },
+    "cards": {
+      "menu_item": "bg-[#121212] border-2 border-[#2A2A2A] p-6 relative group hover:border-[#3DB8F2] transition-colors. Images inside should have a slight rotation (e.g., rotate-[-1deg]) and a polaroid-like white/cream frame.",
+      "review_card": "bg-[#E8D2A4] text-black p-8 relative rotate-[1deg] shadow-[8px_8px_0px_0px_#E63EBD]"
+    },
+    "inputs": {
+      "form_field": "bg-transparent border-b-4 border-[#2A2A2A] focus:border-[#E63EBD] text-[#E8D2A4] font-['Bricolage_Grotesque'] py-3 px-2 outline-none transition-colors",
+      "label": "font-['Bungee'] text-sm text-[#3DB8F2] uppercase tracking-wider"
+    },
+    "decorations": {
+      "tape": "absolute w-24 h-6 bg-[#E8D2A4]/50 backdrop-blur-sm rotate-[-15deg] top-[-10px] left-[-10px] z-10",
+      "noise_overlay": "pointer-events-none fixed inset-0 opacity-[0.03] z-50 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"
+    }
+  },
+  "sections": {
+    "header": {
+      "style": "fixed top-0 w-full z-50 bg-[#050505]/90 backdrop-blur-md border-b-2 border-[#E63EBD]",
+      "logo_treatment": "Use the provided logo prominently. Height: 80px."
+    },
+    "hero": {
+      "style": "min-h-[90vh] flex flex-col justify-center items-center relative overflow-hidden bg-[#050505]",
+      "visuals": "Large logo centered, massive typography 'FRESH, HOT & LOADED'. Use a splatter SVG or CSS radial gradients in pink/blue blurred behind the text to mimic spray paint.",
+      "animations": "Subtle float animation on the logo."
+    },
+    "marquee": {
+      "style": "bg-[#E8D2A4] py-4 border-y-4 border-black overflow-hidden flex whitespace-nowrap",
+      "text_style": "font-['Bungee'] text-black text-3xl mx-4",
+      "content": "🔥 FRESH 🔥 HOT 🔥 LOADED 🔥 HUNGARIAN STREET FOOD 🔥 DAVENTRY 🔥"
+    },
+    "menu": {
+      "style": "py-24 bg-[#050505] relative",
+      "layout": "Grid of menu categories (Spuds, Fries, Crepes, Hungarian). Each category acts as a 'zone' with its own neon accent color (e.g., Spuds = Orange, Fries = Pink, Crepes = Blue).",
+      "items": "Use placeholder items but make them sound delicious. Include prices in a marker font."
+    },
+    "about": {
+      "style": "py-24 bg-[#121212] relative overflow-hidden",
+      "layout": "Two columns. Left: overlapping photos of the truck/festival with 'tape' edges. Right: Text about the Daventry-based story, styled as a wheatpaste poster."
+    },
+    "reviews": {
+      "style": "py-24 bg-[#050505]",
+      "layout": "Horizontal scrolling or staggered masonry of bright cream-colored cards on the dark background. Use real review quotes provided."
+    },
+    "booking_form": {
+      "style": "py-24 bg-[#121212] border-t-2 border-dashed border-[#A3A3A3]",
+      "layout": "Centred form in a heavy bordered container. Graffiti drips hanging off the bottom of the container."
+    },
+    "footer": {
+      "style": "py-12 bg-[#050505] border-t-4 border-[#3DB8F2] text-center",
+      "typography": "Huge 'THE HUNGRY TRAILER' faded in the background, standard contact links."
+    }
+  },
+  "media": {
+    "logo": "https://customer-assets.emergentagent.com/job_7a3d9668-5e2a-4438-96f9-64c3e2392017/artifacts/3czqxrua_547940258_122126469344953077_n-2.jpg",
+    "food_images": {
+      "spuds": "https://images.pexels.com/photos/34495400/pexels-photo-34495400.jpeg",
+      "fries": "https://images.pexels.com/photos/20535803/pexels-photo-20535803.jpeg",
+      "crepes": "https://images.unsplash.com/photo-1765966898894-c87f8d8a3cf6"
+    },
+    "environmental_images": {
+      "food_truck_festival": "https://images.pexels.com/photos/35120750/pexels-photo-35120750.jpeg"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use react-fast-marquee for the moving text separator.",
+    "Implement Lucide React icons for the menu and contact sections (e.g., Flame, MapPin, Phone).",
+    "Add a fixed noise overlay (`.noise-overlay`) to give the entire app a gritty texture.",
+    "Strictly follow the typography scales. Do not use generic fonts like Inter or Roboto for headings. Bungee for primary headings, Bricolage Grotesque for body, Permanent Marker for annotations/accents.",
+    "All buttons must use the harsh, non-blurred drop shadow specified to maintain the brutalist/street art aesthetic.",
+    "Ensure the booking form uses Shadcn components but strip away the default subtle borders and radiuses, replacing them with thick lines and zero radius.",
+    "Add data-testid attributes to all buttons, form inputs, and major navigation links for testing."
+  ]
+}
