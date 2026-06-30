@@ -1,11 +1,12 @@
 import React from "react";
 import { IMAGES } from "../../lib/content";
+import PaintSplatter from "../decor/PaintSplatter";
 
 const PHOTOS = [
-  { src: IMAGES.smashBurger, alt: "Signature smash burger", tag: "Smash Burger", color: "#e63ebd", h: "h-[420px]" },
+  { src: IMAGES.smashBurgerGrill, alt: "Smash burger fresh off the grill", tag: "Off The Grill", color: "#e63ebd", h: "h-[420px]" },
   { src: IMAGES.chilliSpud, alt: "Loaded chilli spud with sour cream", tag: "Chilli Loaded Spud", color: "#f26b2e", h: "h-[300px]" },
   { src: IMAGES.nutellaCrepe, alt: "Fresh Nutella crepe", tag: "Nutella Crepe", color: "#3db8f2", h: "h-[300px]" },
-  { src: IMAGES.tunaSpud, alt: "Tuna mayo spud with beans", tag: "Tuna & Beans Spud", color: "#3db8f2", h: "h-[420px]" },
+  { src: IMAGES.loadedFriesPickles, alt: "Loaded fries with pickles & sauce", tag: "Loaded Fries", color: "#3db8f2", h: "h-[420px]" },
   { src: IMAGES.breakfastMenu, alt: "Breakfast deals", tag: "Breakfast Deals", color: "#e63ebd", h: "h-[300px]" },
   { src: IMAGES.pulledPorkSpud, alt: "Pulled pork spud", tag: "Pulled Pork Spud", color: "#f26b2e", h: "h-[420px]" },
 ];
@@ -19,6 +20,10 @@ export default function Gallery() {
     >
       <div className="spray" style={{ background: "#f26b2e", width: 380, height: 380, top: "20%", left: "-100px", opacity: 0.18 }} />
       <div className="spray" style={{ background: "#3db8f2", width: 380, height: 380, bottom: "10%", right: "-100px", opacity: 0.18 }} />
+
+      <PaintSplatter variant="splat2" color="#e63ebd" size={220} style={{ top: "5%", right: "5%" }} rotate={20} opacity={0.45} />
+      <PaintSplatter variant="splat1" color="#f26b2e" size={180} style={{ bottom: "20%", left: "3%" }} rotate={-30} opacity={0.5} />
+      <PaintSplatter variant="drip" color="#3db8f2" size={140} style={{ top: "55%", right: "45%" }} rotate={-12} opacity={0.35} />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">

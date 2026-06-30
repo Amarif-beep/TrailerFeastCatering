@@ -15,6 +15,14 @@ export const IMAGES = {
   nutellaCrepe: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/42dg8cwp_688964220_122173423364953077_1284685689131616475_n.jpg",
   tunaSpud: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/vl5hn41f_715465412_122177516054953077_4492397018891303758_n.jpg",
   chilliSpud: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/db0d0ie0_721209236_976824948599799_1108377751331856498_n.png.jpeg",
+  smashBurgerGrill: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/pkq64i8f_zzQI4.jpeg",
+  eventCollage: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/w5gec7hu_723407060_1722991069021464_3016211125033517793_n.png.jpeg",
+  loadedFriesPickles: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/mc6mcrn7_736921656_122180702018953077_3592486231315210934_n.jpg",
+};
+
+export const SOCIALS = {
+  facebook: "https://www.facebook.com/thehungrytrailer",
+  instagram: "https://www.instagram.com/thehungrytrailer",
 };
 
 export const REVIEWS = [

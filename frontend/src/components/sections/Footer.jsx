@@ -1,6 +1,6 @@
 import React from "react";
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
-import { CONTACT, LOGO_URL } from "../../lib/content";
+import { CONTACT, LOGO_URL, SOCIALS } from "../../lib/content";
 
 export default function Footer() {
   return (
@@ -61,14 +61,18 @@ export default function Footer() {
           </h4>
           <div className="flex gap-3">
             <a
-              href="#"
+              href={SOCIALS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="p-3 bg-[#e63ebd] text-black border border-black hover:translate-y-[-2px] transition-transform"
             >
               <Instagram size={18} />
             </a>
             <a
-              href="#"
+              href={SOCIALS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
               className="p-3 bg-[#3db8f2] text-black border border-black hover:translate-y-[-2px] transition-transform"
             >
@@ -76,7 +80,7 @@ export default function Footer() {
             </a>
           </div>
           <p className="text-xs text-[#a3a3a3] mt-7 italic max-w-xs">
-            Tag us in your spud pics — we share the best ones on our stories.
+            Daily locations & events updated on Facebook — tag us in your spud pics on Instagram.
           </p>
         </div>
       </div>

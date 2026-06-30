@@ -1,6 +1,7 @@
 import React from "react";
 import { Star, Quote } from "lucide-react";
 import { REVIEWS } from "../../lib/content";
+import PaintSplatter from "../decor/PaintSplatter";
 
 const ROTATIONS = [-1.2, 0.8, -0.6, 1.4, -1, 0.6, -1.6, 1, -0.8];
 const SHADOW_COLORS = ["#e63ebd", "#3db8f2", "#f26b2e", "#e63ebd", "#3db8f2", "#f26b2e", "#e63ebd", "#3db8f2", "#f26b2e"];
@@ -12,7 +13,11 @@ export default function Reviews() {
       data-testid="reviews-section"
       className="relative py-24 md:py-32 px-5 md:px-8 bg-[#050505] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      <PaintSplatter variant="splat1" color="#3db8f2" size={220} style={{ top: "8%", left: "5%" }} rotate={-20} opacity={0.4} />
+      <PaintSplatter variant="splat2" color="#e63ebd" size={200} style={{ bottom: "15%", right: "8%" }} rotate={15} opacity={0.4} />
+      <PaintSplatter variant="drip" color="#f26b2e" size={140} style={{ top: "55%", left: "45%" }} rotate={8} opacity={0.32} />
+
+      <div className="max-w-7xl mx-auto relative">
         <div className="mb-16 grid lg:grid-cols-12 gap-8 items-end">
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3 mb-4">

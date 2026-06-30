@@ -1,6 +1,7 @@
 import React from "react";
 import { Flame, Truck, Heart, Sparkles } from "lucide-react";
 import { IMAGES } from "../../lib/content";
+import PaintSplatter from "../decor/PaintSplatter";
 
 const STATS = [
   { icon: Flame, label: "Cooked Fresh", value: "100%" },
@@ -18,6 +19,10 @@ export default function About() {
     >
       <div className="spray" style={{ background: "#e63ebd", width: 420, height: 420, top: "10%", right: "-120px", opacity: 0.22 }} />
       <div className="spray" style={{ background: "#3db8f2", width: 380, height: 380, bottom: "5%", left: "-120px", opacity: 0.18 }} />
+
+      <PaintSplatter variant="splat1" color="#f26b2e" size={240} style={{ top: "3%", left: "8%" }} rotate={-25} opacity={0.4} />
+      <PaintSplatter variant="drip" color="#3db8f2" size={170} style={{ top: "45%", right: "4%" }} rotate={20} opacity={0.5} />
+      <PaintSplatter variant="brush" color="#e63ebd" size={280} style={{ bottom: "8%", right: "12%" }} rotate={15} opacity={0.18} />
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}

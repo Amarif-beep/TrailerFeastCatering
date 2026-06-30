@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IMAGES } from "../../lib/content";
+import PaintSplatter from "../decor/PaintSplatter";
 
 const FALLBACK = {
   categories: [
@@ -27,7 +28,7 @@ const ACCENTS = {
 // Map a real photo per category id (now with proper dish-specific photos)
 const CATEGORY_PHOTOS = {
   spuds: IMAGES.pulledPorkSpud,
-  fries: IMAGES.chilliSpud,
+  fries: IMAGES.loadedFriesPickles,
   crepes: IMAGES.nutellaCrepe,
   hungarian: IMAGES.tunaSpud,
 };
@@ -46,9 +47,13 @@ export default function Menu({ menu }) {
     <section
       id="menu"
       data-testid="menu-section"
-      className="relative py-24 md:py-32 px-5 md:px-8 bg-[#050505]"
+      className="relative py-24 md:py-32 px-5 md:px-8 bg-[#050505] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      <PaintSplatter variant="splat2" color="#f26b2e" size={220} style={{ top: "8%", right: "3%" }} rotate={15} opacity={0.5} />
+      <PaintSplatter variant="drip" color="#e63ebd" size={150} style={{ bottom: "12%", left: "4%" }} rotate={-12} opacity={0.45} />
+      <PaintSplatter variant="splat1" color="#3db8f2" size={180} style={{ top: "40%", right: "42%" }} rotate={45} opacity={0.18} />
+
+      <div className="max-w-7xl mx-auto relative">
         {/* Section intro */}
         <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
