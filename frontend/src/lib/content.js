@@ -3,14 +3,9 @@ import React from "react";
 export const LOGO_URL =
   "https://customer-assets.emergentagent.com/job_7a3d9668-5e2a-4438-96f9-64c3e2392017/artifacts/3czqxrua_547940258_122126469344953077_440697955309747378_n-2.jpg";
 
-export const IMAGES = {
-  spuds: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80",
-  fries: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=800&q=80",
-  crepes: "https://images.unsplash.com/photo-1519676867240-f03562e64548?w=800&q=80",
-  hungarian: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800&q=80",
-  truck: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1200&q=80",
-  festival: "https://images.unsplash.com/photo-1555992336-fb0d29498b13?w=1200&q=80",
-};
+// Stock food/event images intentionally removed.
+// Add your own at the appropriate sections when ready.
+export const IMAGES = {};
 
 export const REVIEWS = [
   {

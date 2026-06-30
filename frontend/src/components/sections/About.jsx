@@ -1,11 +1,11 @@
 import React from "react";
-import { Flame, Truck, Heart } from "lucide-react";
-import { IMAGES } from "../../lib/content";
+import { Flame, Truck, Heart, Sparkles } from "lucide-react";
 
 const STATS = [
-  { icon: Flame, label: "Fresh Daily", value: "100%" },
-  { icon: Truck, label: "Mobile Van", value: "ON TOUR" },
-  { icon: Heart, label: "Recommend", value: "100%" },
+  { icon: Flame, label: "Cooked Fresh", value: "100%" },
+  { icon: Truck, label: "Mobile Trailer", value: "On Tour" },
+  { icon: Heart, label: "Customer Score", value: "5.0" },
+  { icon: Sparkles, label: "Reviews", value: "16+" },
 ];
 
 export default function About() {
@@ -13,82 +13,80 @@ export default function About() {
     <section
       id="about"
       data-testid="about-section"
-      className="relative py-20 md:py-28 px-5 md:px-8 bg-[#121212] overflow-hidden"
+      className="relative py-24 md:py-32 px-5 md:px-8 bg-[#0a0a0a] overflow-hidden"
     >
-      <div className="spray" style={{ background: "#e63ebd", width: 400, height: 400, top: "10%", right: "-100px" }} />
+      <div className="spray" style={{ background: "#e63ebd", width: 420, height: 420, top: "10%", right: "-120px", opacity: 0.25 }} />
+      <div className="spray" style={{ background: "#3db8f2", width: 380, height: 380, bottom: "5%", left: "-120px", opacity: 0.2 }} />
 
-      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 items-center">
-        {/* Left: overlapping polaroid images */}
-        <div className="lg:col-span-6 relative h-[420px] sm:h-[500px]">
-          <div
-            className="absolute top-0 left-0 w-[60%] bg-[#e8d2a4] p-2 pb-6 border-2 border-black"
-            style={{ transform: "rotate(-5deg)", boxShadow: "10px 10px 0 #3db8f2" }}
-          >
-            <img
-              src={IMAGES.truck}
-              alt="The Hungry Trailer van"
-              className="w-full h-[220px] sm:h-[260px] object-cover"
-            />
-            <p className="font-marker text-black text-center mt-2 text-sm">our home base</p>
+      <div className="relative max-w-7xl mx-auto">
+        {/* Top: section heading */}
+        <div className="grid lg:grid-cols-12 gap-10 mb-16">
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-10 bg-[#f26b2e]" />
+              <p className="font-anton text-[#f26b2e] text-sm uppercase tracking-[0.3em]">
+                Our Story
+              </p>
+            </div>
+            <h2 className="font-anton text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.9]">
+              Built in
+              <br />
+              <span className="text-[#3db8f2]">Daventry.</span>
+              <br />
+              <span className="text-[#e63ebd]">Fed by you.</span>
+            </h2>
           </div>
-          <div
-            className="absolute bottom-0 right-0 w-[60%] bg-[#e8d2a4] p-2 pb-6 border-2 border-black"
-            style={{ transform: "rotate(4deg)", boxShadow: "-10px 10px 0 #e63ebd" }}
-          >
-            <img
-              src={IMAGES.festival}
-              alt="At a festival"
-              className="w-full h-[220px] sm:h-[260px] object-cover"
-            />
-            <p className="font-marker text-black text-center mt-2 text-sm">events & festivals 🤘</p>
-          </div>
-          <div
-            className="absolute top-[40%] left-[35%] bg-[#f26b2e] text-black font-bungee uppercase text-xs px-3 py-2 border-2 border-black"
-            style={{ transform: "rotate(-8deg)", boxShadow: "4px 4px 0 #000" }}
-          >
-            ★ Since Day 1
+
+          <div className="lg:col-span-7 space-y-5 text-[#bcbcbc] text-base sm:text-lg leading-relaxed">
+            <p className="text-[#e8d2a4] text-xl sm:text-2xl font-body font-medium leading-snug">
+              The Hungry Trailer is a small, independent mobile food van based at
+              Casey's Pub, Daventry — serving honest, hand-made street food to a
+              community that's never been shy about telling us when something tastes
+              right.
+            </p>
+            <p>
+              We specialise in the kind of jacket potatoes people drive across the
+              Midlands for: soft, fluffy interiors loaded with slow-cooked toppings
+              that don't cut corners. Pulled pork, homemade chilli, Hungarian goulash,
+              fresh crepes off the plancha — everything cooked to order on the trailer.
+            </p>
+            <p>
+              We also take the show on the road: festivals, weddings, private parties,
+              corporate days. If you've got hungry people and somewhere to park us,
+              we'll handle the rest.
+            </p>
           </div>
         </div>
 
-        {/* Right: copy */}
-        <div className="lg:col-span-6 relative">
-          <p className="font-marker text-[#f26b2e] text-2xl rotate-[-2deg] mb-3">our story</p>
-          <h2 className="font-bungee text-[#e8d2a4] text-4xl sm:text-5xl lg:text-6xl uppercase leading-none mb-6">
-            Built in <span className="text-[#3db8f2]">Daventry</span>,<br />
-            <span className="text-[#e63ebd]">fed</span> by you.
-          </h2>
-          <div className="space-y-4 text-[#a3a3a3] text-base leading-relaxed">
-            <p>
-              The Hungry Trailer is a small mobile food van slinging proper street food from{" "}
-              <span className="text-[#e8d2a4] font-semibold">Casey's Pub in Daventry</span>. We
-              specialise in the spuds people drive across the Midlands for — soft, fluffy, and
-              loaded with toppings that don't mess around.
-            </p>
-            <p>
-              Pulled pork, slow-cooked chilli, Hungarian goulash, fresh crepes off the plancha
-              — all cooked fresh, with ingredients we'd serve our own families. We also roll
-              out to festivals, weddings, private parties and corporate events across the UK.
-            </p>
-            <p className="font-marker text-[#e8d2a4] text-xl">
-              Come hungry. Leave happy. That's the deal.
-            </p>
-          </div>
+        {/* Big quote band */}
+        <div className="relative my-16 py-12 border-y-2 border-[#2a2a2a]">
+          <p className="font-anton text-[#e8d2a4] text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight text-center">
+            <span className="text-[#e63ebd]">"</span>
+            Come hungry. <span className="text-[#bcbcbc]">·</span> Leave happy.
+            <span className="text-[#e63ebd]">"</span>
+          </p>
+          <p className="font-marker text-center text-[#a3a3a3] text-base mt-4 rotate-[-1deg]">
+            — the only promise we make
+          </p>
+        </div>
 
-          <div className="mt-8 grid grid-cols-3 gap-4">
-            {STATS.map((s, i) => (
-              <div
-                key={i}
-                data-testid={`stat-${i}`}
-                className="bg-[#050505] border-2 border-[#2a2a2a] p-4 text-center"
-              >
-                <s.icon size={22} className="mx-auto mb-2 text-[#e63ebd]" />
-                <div className="font-bungee text-[#e8d2a4] text-base sm:text-lg">{s.value}</div>
-                <div className="text-[10px] sm:text-xs text-[#a3a3a3] uppercase tracking-wider mt-1">
-                  {s.label}
-                </div>
+        {/* Stats */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {STATS.map((s, i) => (
+            <div
+              key={i}
+              data-testid={`stat-${i}`}
+              className="bg-[#050505] border border-[#2a2a2a] p-6 hover:border-[#e63ebd] transition-colors"
+            >
+              <s.icon size={22} className="text-[#e63ebd] mb-4" />
+              <div className="font-anton text-[#e8d2a4] text-3xl sm:text-4xl uppercase leading-none mb-2">
+                {s.value}
               </div>
-            ))}
-          </div>
+              <div className="text-xs text-[#a3a3a3] uppercase tracking-[0.18em] font-anton">
+                {s.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,32 +1,31 @@
 import React from "react";
 
 const ITEMS = [
-  "FRESH",
-  "HOT",
-  "LOADED",
-  "HUNGARIAN STREET FOOD",
-  "JACKET SPUDS",
-  "LOADED FRIES",
-  "CREPES",
-  "DAVENTRY",
+  "Fresh",
+  "Hot",
+  "Loaded",
+  "Hungarian Street Food",
+  "Jacket Spuds",
+  "Loaded Fries",
+  "Homemade Crepes",
+  "Daventry",
 ];
 
 export default function Marquee() {
-  // Duplicate items twice for seamless loop
-  const list = [...ITEMS, ...ITEMS];
+  const list = [...ITEMS, ...ITEMS, ...ITEMS];
   return (
     <div
       data-testid="marquee-section"
-      className="bg-[#e8d2a4] border-y-4 border-black overflow-hidden py-4 relative"
+      className="bg-[#e8d2a4] border-y-2 border-black overflow-hidden py-5 relative"
     >
       <div className="marquee-track">
         {list.map((t, i) => (
           <span
             key={i}
-            className="font-bungee text-black text-2xl md:text-3xl px-6 inline-flex items-center gap-6"
+            className="font-anton text-black text-2xl md:text-3xl px-6 inline-flex items-center gap-6 uppercase tracking-[0.08em]"
           >
-            🔥 {t}
-            <span className="text-[#e63ebd] text-3xl">✦</span>
+            {t}
+            <span className="text-[#e63ebd] text-2xl">✦</span>
           </span>
         ))}
       </div>

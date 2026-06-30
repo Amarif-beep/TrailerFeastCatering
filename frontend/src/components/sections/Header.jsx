@@ -30,7 +30,7 @@ export default function Header() {
     <header
       data-testid="site-header"
       className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${
-        scrolled ? "bg-black/90 backdrop-blur-md border-b-2 border-[#e63ebd]" : "bg-transparent"
+        scrolled ? "bg-black/95 backdrop-blur-md border-b border-[#2a2a2a]" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-3 flex items-center justify-between">
@@ -42,7 +42,7 @@ export default function Header() {
           <img
             src={LOGO_URL}
             alt="The Hungry Trailer"
-            className="h-12 md:h-14 w-auto object-contain group-hover:rotate-[-3deg] transition-transform"
+            className="h-11 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
           />
         </button>
 
@@ -52,7 +52,7 @@ export default function Header() {
               key={n.id}
               data-testid={`nav-${n.id}`}
               onClick={() => go(n.id)}
-              className="font-bungee text-xs uppercase tracking-wider text-[#e8d2a4] px-3 py-2 hover:text-[#e63ebd] transition-colors"
+              className="font-anton text-sm uppercase tracking-[0.14em] text-[#e8d2a4] px-4 py-2 hover:text-[#e63ebd] transition-colors"
             >
               {n.label}
             </button>
@@ -60,7 +60,8 @@ export default function Header() {
           <button
             data-testid="nav-order-cta"
             onClick={() => go("booking")}
-            className="btn-pink ml-3 text-xs"
+            className="btn-pink ml-3 text-sm"
+            style={{ padding: "0.6rem 1.2rem" }}
           >
             Book Us
           </button>
@@ -77,13 +78,13 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-black border-t-2 border-[#e63ebd] px-5 py-6 flex flex-col gap-2">
+        <div className="md:hidden bg-black border-t border-[#2a2a2a] px-5 py-6 flex flex-col gap-2">
           {NAV.map((n) => (
             <button
               key={n.id}
               data-testid={`mobile-nav-${n.id}`}
               onClick={() => go(n.id)}
-              className="font-bungee text-base uppercase text-left py-2 text-[#e8d2a4] hover:text-[#3db8f2]"
+              className="font-anton text-lg uppercase tracking-wider text-left py-2 text-[#e8d2a4] hover:text-[#e63ebd]"
             >
               {n.label}
             </button>

@@ -26,8 +26,7 @@ export default function Booking() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
 
-  const update = (k) => (e) =>
-    setForm((f) => ({ ...f, [k]: e.target.value }));
+  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const submit = async (e) => {
     e.preventDefault();
@@ -59,57 +58,67 @@ export default function Booking() {
     <section
       id="booking"
       data-testid="booking-section"
-      className="relative py-20 md:py-28 px-5 md:px-8 bg-[#050505] overflow-hidden"
+      className="relative py-24 md:py-32 px-5 md:px-8 bg-[#050505] overflow-hidden"
     >
-      <div className="spray" style={{ background: "#f26b2e", width: 500, height: 500, bottom: "-150px", right: "-100px" }} />
+      <div className="spray" style={{ background: "#f26b2e", width: 460, height: 460, bottom: "-150px", right: "-100px", opacity: 0.25 }} />
+      <div className="spray" style={{ background: "#e63ebd", width: 380, height: 380, top: "-100px", left: "-80px", opacity: 0.2 }} />
 
       <div className="relative max-w-4xl mx-auto">
-        <div className="mb-10 text-center">
-          <p className="font-marker text-[#e63ebd] text-xl md:text-2xl rotate-[-2deg] mb-2">
-            need us at your gig? 🎉
-          </p>
-          <h2 className="font-bungee text-[#e8d2a4] text-4xl sm:text-5xl lg:text-6xl uppercase leading-none mb-4">
-            Book <span className="text-[#3db8f2]">The</span> <span className="text-[#e63ebd]">Trailer</span>
+        <div className="mb-12 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="h-px w-10 bg-[#e63ebd]" />
+            <p className="font-anton text-[#e63ebd] text-sm uppercase tracking-[0.3em]">
+              Catering & Events
+            </p>
+            <span className="h-px w-10 bg-[#e63ebd]" />
+          </div>
+          <h2 className="font-anton text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.9] mb-5">
+            Book the
+            <br />
+            <span className="text-[#3db8f2]">Trailer.</span>
           </h2>
-          <p className="text-[#a3a3a3] max-w-xl mx-auto">
-            Weddings, festivals, birthdays, corporate days, street parties — drop the details
-            and we'll get back within 24 hours.
+          <p className="text-[#a3a3a3] max-w-xl mx-auto text-base leading-relaxed">
+            Weddings, festivals, birthdays, corporate days, street parties — share a few
+            details and we'll come back within 24 hours with availability and a quote.
           </p>
         </div>
 
         {done ? (
           <div
             data-testid="booking-success"
-            className="bg-[#e8d2a4] text-black p-10 border-2 border-black text-center"
-            style={{ boxShadow: "10px 10px 0 #e63ebd", transform: "rotate(-1deg)" }}
+            className="bg-[#e8d2a4] text-black p-10 sm:p-12 border-2 border-black text-center"
+            style={{ boxShadow: "10px 10px 0 #000" }}
           >
-            <PartyPopper size={48} className="mx-auto mb-4 text-[#e63ebd]" />
-            <h3 className="font-bungee text-3xl uppercase mb-3">Booking Sent!</h3>
-            <p className="mb-6">
-              Cheers — we'll be in touch shortly with availability & a quote. Keep an eye on your inbox 🙌
+            <PartyPopper size={52} className="mx-auto mb-5 text-[#e63ebd]" />
+            <h3 className="font-anton text-4xl uppercase mb-3 tracking-wide">Request Sent</h3>
+            <p className="mb-7 text-base leading-relaxed max-w-md mx-auto">
+              Thanks — we've got your details. Expect a reply within 24 hours with
+              availability and a tailored quote.
             </p>
             <button
               data-testid="booking-another-btn"
               className="btn-pink"
               onClick={() => setDone(false)}
             >
-              Send Another
+              Send Another Request
             </button>
           </div>
         ) : (
           <form
             onSubmit={submit}
             data-testid="booking-form"
-            className="bg-[#121212] p-6 sm:p-10 border-4 border-[#e8d2a4] relative"
-            style={{ boxShadow: "12px 12px 0 #3db8f2" }}
+            className="bg-[#0a0a0a] p-7 sm:p-10 border-2 border-[#e8d2a4] relative"
+            style={{ boxShadow: "10px 10px 0 #000" }}
           >
-            <div className="absolute -top-4 left-8 bg-[#e63ebd] text-black font-bungee uppercase text-xs px-4 py-1.5 border-2 border-black rotate-[-3deg]">
-              Event Booking
+            <div className="absolute -top-4 left-8 bg-[#e63ebd] text-black font-anton uppercase text-xs tracking-[0.2em] px-4 py-1.5 border-2 border-black">
+              Event Enquiry
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-7 mt-4">
               <div>
-                <label className="tht-label" htmlFor="bk-name">Your Name *</label>
+                <label className="tht-label" htmlFor="bk-name">
+                  Your Name *
+                </label>
                 <input
                   id="bk-name"
                   data-testid="booking-name"
@@ -121,7 +130,9 @@ export default function Booking() {
                 />
               </div>
               <div>
-                <label className="tht-label" htmlFor="bk-email">Email *</label>
+                <label className="tht-label" htmlFor="bk-email">
+                  Email *
+                </label>
                 <input
                   id="bk-email"
                   data-testid="booking-email"
@@ -134,7 +145,9 @@ export default function Booking() {
                 />
               </div>
               <div>
-                <label className="tht-label" htmlFor="bk-phone">Phone *</label>
+                <label className="tht-label" htmlFor="bk-phone">
+                  Phone *
+                </label>
                 <input
                   id="bk-phone"
                   data-testid="booking-phone"
@@ -147,7 +160,9 @@ export default function Booking() {
                 />
               </div>
               <div>
-                <label className="tht-label" htmlFor="bk-date">Event Date *</label>
+                <label className="tht-label" htmlFor="bk-date">
+                  Event Date *
+                </label>
                 <input
                   id="bk-date"
                   data-testid="booking-date"
@@ -159,24 +174,28 @@ export default function Booking() {
                 />
               </div>
               <div>
-                <label className="tht-label" htmlFor="bk-type">Event Type *</label>
+                <label className="tht-label" htmlFor="bk-type">
+                  Event Type *
+                </label>
                 <select
                   id="bk-type"
                   data-testid="booking-type"
                   required
-                  className="tht-input bg-[#121212]"
+                  className="tht-input bg-[#0a0a0a]"
                   value={form.event_type}
                   onChange={update("event_type")}
                 >
                   {EVENT_TYPES.map((t) => (
-                    <option key={t} value={t} className="bg-[#121212]">
+                    <option key={t} value={t} className="bg-[#0a0a0a]">
                       {t}
                     </option>
                   ))}
                 </select>
               </div>
               <div>
-                <label className="tht-label" htmlFor="bk-guests">Approx. Guests *</label>
+                <label className="tht-label" htmlFor="bk-guests">
+                  Approx. Guests *
+                </label>
                 <input
                   id="bk-guests"
                   data-testid="booking-guests"
@@ -189,14 +208,16 @@ export default function Booking() {
                 />
               </div>
             </div>
-            <div className="mt-6">
-              <label className="tht-label" htmlFor="bk-msg">Tell us about it</label>
+            <div className="mt-7">
+              <label className="tht-label" htmlFor="bk-msg">
+                Tell us about it
+              </label>
               <textarea
                 id="bk-msg"
                 data-testid="booking-message"
                 rows={4}
                 className="tht-input resize-none"
-                placeholder="Where? What time? Any food preferences? Throw it all at us."
+                placeholder="Where? What time? Any food preferences or dietary requirements?"
                 value={form.message}
                 onChange={update("message")}
               />
@@ -206,12 +227,12 @@ export default function Booking() {
               type="submit"
               disabled={submitting}
               data-testid="booking-submit"
-              className="btn-pink mt-8 w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
+              className="btn-pink mt-9 w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {submitting ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
               {submitting ? "Sending..." : "Send Booking Request"}
             </button>
-            <p className="text-xs text-[#a3a3a3] mt-4">
+            <p className="text-xs text-[#a3a3a3] mt-5">
               By submitting you agree to be contacted by The Hungry Trailer regarding your event.
             </p>
           </form>
