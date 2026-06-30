@@ -26,14 +26,14 @@ export default function Hero() {
               className="relative z-10 w-[260px] sm:w-[320px] lg:w-[400px] h-auto select-none drop-shadow-[6px_6px_0_rgba(0,0,0,0.55)] float-logo mx-auto lg:mx-0"
               draggable="false"
             />
-            {/* Trailer photo card behind logo, peeking out */}
+            {/* Smash burger photo card peeking out behind logo */}
             <div
               className="hidden lg:block absolute -bottom-12 -right-8 w-[280px] h-[200px] border-2 border-[#e8d2a4] overflow-hidden z-0"
               style={{ transform: "rotate(4deg)", boxShadow: "8px 8px 0 #000" }}
             >
               <img
-                src={IMAGES.trailerStreet}
-                alt="The trailer at a market"
+                src={IMAGES.smashBurger}
+                alt="A signature smash burger"
                 className="w-full h-full object-cover"
               />
             </div>

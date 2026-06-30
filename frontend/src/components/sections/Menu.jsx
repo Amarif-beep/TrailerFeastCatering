@@ -24,12 +24,12 @@ const ACCENTS = {
   blue: { color: "#3db8f2", text: "text-[#3db8f2]", underline: "underline-marker-blue" },
 };
 
-// Map a real photo per category id (falls back if not all available)
+// Map a real photo per category id (now with proper dish-specific photos)
 const CATEGORY_PHOTOS = {
   spuds: IMAGES.pulledPorkSpud,
-  fries: IMAGES.pulledPorkSpud,
-  crepes: IMAGES.chalkboard,
-  hungarian: IMAGES.jacketPotato,
+  fries: IMAGES.chilliSpud,
+  crepes: IMAGES.nutellaCrepe,
+  hungarian: IMAGES.tunaSpud,
 };
 
 const NUMBERS = ["01", "02", "03", "04", "05", "06", "07", "08"];

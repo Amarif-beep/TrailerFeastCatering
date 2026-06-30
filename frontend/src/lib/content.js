@@ -10,6 +10,11 @@ export const IMAGES = {
   trailerStreet: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/0pxe5wml_602915900_122147777186953077_2712070752555340835_n.jpg",
   trailerAngled: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/5acwr138_622268955_122155108064953077_574730231273269429_n.jpg",
   jacketPotato: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/rr6fzmq2_633950782_122158890722953077_2971306064459013654_n.jpg",
+  smashBurger: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/tq6i2c0i_645582201_122162136458953077_8494955242874582567_n.jpg",
+  breakfastMenu: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/1y94cnjk_672683241_122169776198953077_4339798704036318782_n.jpg",
+  nutellaCrepe: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/42dg8cwp_688964220_122173423364953077_1284685689131616475_n.jpg",
+  tunaSpud: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/vl5hn41f_715465412_122177516054953077_4492397018891303758_n.jpg",
+  chilliSpud: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/db0d0ie0_721209236_976824948599799_1108377751331856498_n.png.jpeg",
 };
 
 export const REVIEWS = [
