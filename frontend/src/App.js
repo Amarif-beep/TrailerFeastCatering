@@ -20,9 +20,10 @@ function App() {
             color: "#050505",
             border: "2px solid #000",
             borderRadius: 0,
-            fontFamily: "'Anton', sans-serif",
+            fontFamily: "'Big Shoulders Display', sans-serif",
+            fontWeight: 900,
             textTransform: "uppercase",
-            letterSpacing: "0.06em",
+            letterSpacing: "0.04em",
             boxShadow: "6px 6px 0 0 #000",
           },
         }}

@@ -3,9 +3,14 @@ import React from "react";
 export const LOGO_URL =
   "https://customer-assets.emergentagent.com/job_7a3d9668-5e2a-4438-96f9-64c3e2392017/artifacts/3czqxrua_547940258_122126469344953077_440697955309747378_n-2.jpg";
 
-// Stock food/event images intentionally removed.
-// Add your own at the appropriate sections when ready.
-export const IMAGES = {};
+// Real photos from The Hungry Trailer.
+export const IMAGES = {
+  pulledPorkSpud: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/72ie1m72_581996658_122140600424953077_3072274604498774299_n.jpg",
+  chalkboard: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/fpzspbf5_593567319_122144665688953077_3092444374127119746_n.jpg",
+  trailerStreet: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/0pxe5wml_602915900_122147777186953077_2712070752555340835_n.jpg",
+  trailerAngled: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/5acwr138_622268955_122155108064953077_574730231273269429_n.jpg",
+  jacketPotato: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/rr6fzmq2_633950782_122158890722953077_2971306064459013654_n.jpg",
+};
 
 export const REVIEWS = [
   {

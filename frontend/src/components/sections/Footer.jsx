@@ -11,7 +11,7 @@ export default function Footer() {
       {/* Faded background text */}
       <div
         aria-hidden
-        className="absolute inset-x-0 -bottom-4 font-anton uppercase text-[15vw] leading-none text-[#0d0d0d] tracking-tighter text-center pointer-events-none select-none whitespace-nowrap"
+        className="absolute inset-x-0 -bottom-4 font-display uppercase text-[15vw] leading-none text-[#0d0d0d] tracking-tighter text-center pointer-events-none select-none whitespace-nowrap"
       >
         HUNGRY TRAILER
       </div>
@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-anton text-[#e63ebd] uppercase text-sm tracking-[0.2em] mb-5">
+          <h4 className="font-display text-[#e63ebd] uppercase text-sm tracking-[0.22em] mb-5">
             Contact
           </h4>
           <ul className="space-y-3.5 text-sm">
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-anton text-[#3db8f2] uppercase text-sm tracking-[0.2em] mb-5">
+          <h4 className="font-display text-[#3db8f2] uppercase text-sm tracking-[0.22em] mb-5">
             Follow
           </h4>
           <div className="flex gap-3">
@@ -85,7 +85,7 @@ export default function Footer() {
         <p className="text-xs text-[#a3a3a3] text-center sm:text-left">
           © {new Date().getFullYear()} The Hungry Trailer · Daventry, UK · All rights reserved.
         </p>
-        <p className="font-anton text-[#e8d2a4] text-xs uppercase tracking-[0.3em]">
+        <p className="font-display text-[#e8d2a4] text-xs uppercase tracking-[0.32em]">
           Fresh · Hot · Loaded
         </p>
       </div>

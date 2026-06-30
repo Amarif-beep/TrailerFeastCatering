@@ -22,7 +22,7 @@ export default function Marquee() {
         {list.map((t, i) => (
           <span
             key={i}
-            className="font-anton text-black text-2xl md:text-3xl px-6 inline-flex items-center gap-6 uppercase tracking-[0.08em]"
+            className="font-display text-black text-2xl md:text-3xl px-6 inline-flex items-center gap-6 uppercase tracking-[0.06em]"
           >
             {t}
             <span className="text-[#e63ebd] text-2xl">✦</span>

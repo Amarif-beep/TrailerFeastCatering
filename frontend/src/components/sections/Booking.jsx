@@ -67,17 +67,17 @@ export default function Booking() {
         <div className="mb-12 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="h-px w-10 bg-[#e63ebd]" />
-            <p className="font-anton text-[#e63ebd] text-sm uppercase tracking-[0.3em]">
+            <p className="font-display text-[#e63ebd] text-sm uppercase tracking-[0.32em]">
               Catering & Events
             </p>
             <span className="h-px w-10 bg-[#e63ebd]" />
           </div>
-          <h2 className="font-anton text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.9] mb-5">
+          <h2 className="font-display text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85] mb-5">
             Book the
             <br />
-            <span className="text-[#3db8f2]">Trailer.</span>
+            <span className="text-[#3db8f2] underline-marker underline-marker-blue">Trailer.</span>
           </h2>
-          <p className="text-[#a3a3a3] max-w-xl mx-auto text-base leading-relaxed">
+          <p className="text-[#a3a3a3] max-w-xl mx-auto text-base leading-relaxed font-body">
             Weddings, festivals, birthdays, corporate days, street parties — share a few
             details and we'll come back within 24 hours with availability and a quote.
           </p>
@@ -90,8 +90,8 @@ export default function Booking() {
             style={{ boxShadow: "10px 10px 0 #000" }}
           >
             <PartyPopper size={52} className="mx-auto mb-5 text-[#e63ebd]" />
-            <h3 className="font-anton text-4xl uppercase mb-3 tracking-wide">Request Sent</h3>
-            <p className="mb-7 text-base leading-relaxed max-w-md mx-auto">
+            <h3 className="font-display text-4xl uppercase mb-3 tracking-wide">Request Sent</h3>
+            <p className="mb-7 text-base leading-relaxed max-w-md mx-auto font-body">
               Thanks — we've got your details. Expect a reply within 24 hours with
               availability and a tailored quote.
             </p>
@@ -110,7 +110,7 @@ export default function Booking() {
             className="bg-[#0a0a0a] p-7 sm:p-10 border-2 border-[#e8d2a4] relative"
             style={{ boxShadow: "10px 10px 0 #000" }}
           >
-            <div className="absolute -top-4 left-8 bg-[#e63ebd] text-black font-anton uppercase text-xs tracking-[0.2em] px-4 py-1.5 border-2 border-black">
+            <div className="absolute -top-4 left-8 bg-[#e63ebd] text-black font-display uppercase text-xs tracking-[0.22em] px-4 py-1.5 border-2 border-black">
               Event Enquiry
             </div>
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/sections/Header";
 import Hero from "../components/sections/Hero";
 import Marquee from "../components/sections/Marquee";

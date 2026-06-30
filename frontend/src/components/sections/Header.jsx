@@ -52,7 +52,7 @@ export default function Header() {
               key={n.id}
               data-testid={`nav-${n.id}`}
               onClick={() => go(n.id)}
-              className="font-anton text-sm uppercase tracking-[0.14em] text-[#e8d2a4] px-4 py-2 hover:text-[#e63ebd] transition-colors"
+              className="font-display text-sm uppercase tracking-[0.16em] text-[#e8d2a4] px-4 py-2 hover:text-[#e63ebd] transition-colors"
             >
               {n.label}
             </button>
@@ -84,7 +84,7 @@ export default function Header() {
               key={n.id}
               data-testid={`mobile-nav-${n.id}`}
               onClick={() => go(n.id)}
-              className="font-anton text-lg uppercase tracking-wider text-left py-2 text-[#e8d2a4] hover:text-[#e63ebd]"
+              className="font-display text-lg uppercase tracking-wider text-left py-2 text-[#e8d2a4] hover:text-[#e63ebd]"
             >
               {n.label}
             </button>

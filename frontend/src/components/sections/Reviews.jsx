@@ -17,14 +17,15 @@ export default function Reviews() {
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-10 bg-[#3db8f2]" />
-              <p className="font-anton text-[#3db8f2] text-sm uppercase tracking-[0.3em]">
+              <p className="font-display text-[#3db8f2] text-sm uppercase tracking-[0.32em]">
                 Word on the street
               </p>
             </div>
-            <h2 className="font-anton text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.9]">
+            <h2 className="font-display text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
               What our
               <br />
-              regulars <span className="text-[#e63ebd]">say.</span>
+              <span className="font-news lowercase normal-case text-[#bcbcbc] text-4xl sm:text-5xl lg:text-6xl">regulars</span>{" "}
+              <span className="underline-marker">say.</span>
             </h2>
           </div>
 
@@ -34,10 +35,10 @@ export default function Reviews() {
                 <Star key={i} size={26} className="fill-[#f26b2e] text-[#f26b2e]" />
               ))}
             </div>
-            <p className="font-anton text-[#e8d2a4] text-lg uppercase tracking-[0.14em]">
+            <p className="font-display text-[#e8d2a4] text-lg uppercase tracking-[0.14em]">
               5.0 · 100% Recommended · 16 Reviews
             </p>
-            <p className="text-[#a3a3a3] text-sm">Verified Facebook recommendations</p>
+            <p className="text-[#a3a3a3] text-sm font-body">Verified Facebook recommendations</p>
           </div>
         </div>
 
@@ -56,10 +57,10 @@ export default function Reviews() {
               <p className="font-body text-base leading-relaxed mb-6">"{r.quote}"</p>
               <div className="flex items-center justify-between pt-5 border-t-2 border-dashed border-black/25">
                 <div>
-                  <div className="font-anton text-base uppercase tracking-wider leading-none">
+                  <div className="font-display text-base uppercase tracking-wider leading-none">
                     {r.name}
                   </div>
-                  <div className="text-xs opacity-60 mt-1">{r.date}</div>
+                  <div className="text-xs opacity-60 mt-1 font-body">{r.date}</div>
                 </div>
                 <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map((i) => (
