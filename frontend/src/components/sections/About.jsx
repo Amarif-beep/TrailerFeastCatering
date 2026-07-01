@@ -64,39 +64,39 @@ export default function About() {
         </div>
 
         {/* Photo collage */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-6 mb-16">
+        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-6 mb-16 lg:h-[440px]">
           <div
-            className="lg:col-span-7 relative border-2 border-[#e8d2a4]"
+            className="lg:col-span-7 relative border-2 border-[#e8d2a4] overflow-hidden h-[280px] lg:h-full"
             style={{ boxShadow: "10px 10px 0 #000", transform: "rotate(-0.8deg)" }}
           >
             <img
               src={IMAGES.trailerStreet}
               alt="The trailer at a Daventry market"
-              className="w-full h-[300px] sm:h-[420px] object-cover"
+              className="w-full h-full object-cover"
             />
             <div className="absolute bottom-3 left-3 bg-black/70 backdrop-blur-sm border border-[#e8d2a4] px-3 py-1.5 font-display uppercase text-xs text-[#e8d2a4] tracking-[0.18em]">
               On location · Daventry
             </div>
           </div>
-          <div className="lg:col-span-5 grid grid-rows-2 gap-6">
+          <div className="lg:col-span-5 grid grid-cols-2 lg:grid-cols-1 lg:grid-rows-2 gap-6 lg:h-full">
             <div
-              className="relative border-2 border-[#e8d2a4] overflow-hidden"
+              className="relative border-2 border-[#e8d2a4] overflow-hidden h-[180px] lg:h-full"
               style={{ boxShadow: "8px 8px 0 #e63ebd", transform: "rotate(1.5deg)" }}
             >
               <img
                 src={IMAGES.trailerAngled}
                 alt="The trailer ready for an event"
-                className="w-full h-full object-cover min-h-[180px]"
+                className="w-full h-full object-cover"
               />
             </div>
             <div
-              className="relative border-2 border-[#e8d2a4] overflow-hidden"
+              className="relative border-2 border-[#e8d2a4] overflow-hidden h-[180px] lg:h-full"
               style={{ boxShadow: "8px 8px 0 #3db8f2", transform: "rotate(-1.2deg)" }}
             >
               <img
                 src={IMAGES.jacketPotato}
                 alt="A fresh jacket potato"
-                className="w-full h-full object-cover min-h-[180px]"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
