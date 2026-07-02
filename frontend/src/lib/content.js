@@ -20,6 +20,11 @@ export const IMAGES = {
   loadedFriesPickles: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/mc6mcrn7_736921656_122180702018953077_3592486231315210934_n.jpg",
   trailerRear: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/1sgb30el_783BD317-0213-44E9-95BC-B6A178A644C3.jpeg",
   trailerRearSun: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/g0ch8hvv_C9F59015-0A6D-414A-B94E-B6E91CCF9859.jpeg",
+  trailerSide: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/9j7cii6w_IMG_0464%20Medium.jpeg",
+  trailerCloseup: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/oooiqkhe_IMG_0465%20Medium.jpeg",
+  trailerBackName: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/zyd338d6_IMG_0466%20Medium.jpeg",
+  trailerBackContact: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/hp7eszye_IMG_0467%20Medium.jpeg",
+  trailerFullWrap: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/8der3m6n_IMG_0468%20Medium.jpeg",
 };
 
 export const SOCIALS = {

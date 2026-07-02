@@ -103,16 +103,13 @@ export default function About() {
         </div>
 
         {/* Quote band */}
-        <div className="relative py-12 border-y-2 border-[#2a2a2a] mb-16">
+        <div className="relative py-12 mb-16">
           <p className="font-display text-[#e8d2a4] text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight text-center">
             <span className="text-[#e63ebd]">"</span>
             Come <span className="underline-marker">hungry.</span>
             <span className="text-[#bcbcbc] mx-3">·</span>
             Leave <span className="underline-marker underline-marker-blue">happy.</span>
             <span className="text-[#e63ebd]">"</span>
-          </p>
-          <p className="font-marker text-center text-[#a3a3a3] text-base mt-4 rotate-[-1deg]">
-            — the only promise we make
           </p>
         </div>
 
