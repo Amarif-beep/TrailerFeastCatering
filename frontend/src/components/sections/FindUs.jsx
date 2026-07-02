@@ -34,10 +34,10 @@ export default function FindUs() {
                 Find Us
               </p>
             </div>
-            <h2 className="font-display text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
+            <h2 className="font-display text-white text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
               Park up.
               <br />
-              <span className="text-[#3db8f2] underline-marker underline-marker-blue">Order up.</span>
+              <span className="text-gold underline-marker underline-marker-orange">Order up.</span>
             </h2>
           </div>
           <p className="text-[#a3a3a3] max-w-sm text-base leading-relaxed font-body">

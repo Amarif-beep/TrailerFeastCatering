@@ -26,11 +26,11 @@ export default function Reviews() {
                 Word on the street
               </p>
             </div>
-            <h2 className="font-display text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
+            <h2 className="font-display text-white text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
               What our
               <br />
               <span className="font-news lowercase normal-case text-[#bcbcbc] text-4xl sm:text-5xl lg:text-6xl">regulars</span>{" "}
-              <span className="underline-marker">say.</span>
+              <span className="text-gold underline-marker underline-marker-orange">say.</span>
             </h2>
           </div>
 

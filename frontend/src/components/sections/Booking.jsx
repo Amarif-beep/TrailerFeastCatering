@@ -93,10 +93,10 @@ export default function Booking({ defaultTrailerId, defaultDate }) {
             </p>
             <span className="h-px w-10 bg-[#e63ebd]" />
           </div>
-          <h2 className="font-display text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85] mb-5">
+          <h2 className="font-display text-white text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85] mb-5">
             Book the
             <br />
-            <span className="text-[#3db8f2] underline-marker underline-marker-blue">trailer.</span>
+            <span className="text-gold underline-marker underline-marker-orange">trailer.</span>
           </h2>
           <p className="text-[#a3a3a3] max-w-xl mx-auto text-base leading-relaxed font-body">
             Share a few details and we'll come back within 24 hours with availability,
@@ -202,7 +202,7 @@ export default function Booking({ defaultTrailerId, defaultDate }) {
               type="submit"
               disabled={submitting}
               data-testid="booking-submit"
-              className="btn-pink mt-9 w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
+              className="btn-gold mt-9 w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {submitting ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
               {submitting ? "Sending..." : "Send Booking Request"}

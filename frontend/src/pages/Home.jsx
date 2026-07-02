@@ -10,10 +10,11 @@ import FAQ from "../components/sections/FAQ";
 import FindUs from "../components/sections/FindUs";
 import Booking from "../components/sections/Booking";
 import Footer from "../components/sections/Footer";
+import MobileBookBar from "../components/MobileBookBar";
 
 export default function Home() {
   return (
-    <div data-testid="home-page" className="relative">
+    <div data-testid="home-page" className="relative graffiti-bg">
       <Header />
       <main>
         <Hero />
@@ -27,6 +28,7 @@ export default function Home() {
         <Booking />
       </main>
       <Footer />
+      <MobileBookBar />
     </div>
   );
 }

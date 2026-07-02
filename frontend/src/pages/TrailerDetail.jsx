@@ -6,6 +6,7 @@ import Footer from "../components/sections/Footer";
 import Booking from "../components/sections/Booking";
 import AvailabilityCalendar from "../components/AvailabilityCalendar";
 import PaintSplatter from "../components/decor/PaintSplatter";
+import MobileBookBar from "../components/MobileBookBar";
 import { TRAILERS_BY_ID } from "../lib/trailers";
 
 export default function TrailerDetail() {
@@ -36,7 +37,7 @@ export default function TrailerDetail() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative graffiti-bg">
       <Header />
       <div className="noise-overlay" />
 
@@ -63,7 +64,7 @@ export default function TrailerDetail() {
                 Trailer · {trailer.id}
               </p>
             </div>
-            <h1 className="font-display text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.88] mb-4">
+            <h1 className="font-display text-white text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.88] mb-4">
               {trailer.name}
             </h1>
             <p className="font-news text-[#bcbcbc] text-xl sm:text-2xl italic mb-6">
@@ -74,7 +75,7 @@ export default function TrailerDetail() {
             </p>
             <button
               onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
-              className="btn-pink"
+              className="btn-gold"
               data-testid={`hero-book-${trailer.id}`}
             >
               Book {trailer.name}
@@ -82,10 +83,10 @@ export default function TrailerDetail() {
           </div>
           <div className="lg:col-span-5">
             <div
-              className="relative border-4 border-[#e8d2a4] overflow-hidden"
+              className="relative border-4 border-[var(--gold)] overflow-hidden"
               style={{ boxShadow: `12px 12px 0 ${trailer.accent}`, transform: "rotate(-1deg)" }}
             >
-              <img src={trailer.hero} alt={trailer.name} className="w-full h-[420px] object-cover" />
+              <img src={trailer.hero} alt={trailer.name} className="w-full h-[480px] lg:h-[560px] object-cover" />
             </div>
           </div>
         </div>
@@ -251,6 +252,7 @@ export default function TrailerDetail() {
       <Booking defaultTrailerId={trailer.id} defaultDate={selectedDate} />
 
       <Footer />
+      <MobileBookBar />
     </div>
   );
 }

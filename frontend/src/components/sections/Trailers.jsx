@@ -24,11 +24,11 @@ export default function Trailers() {
                 Our Fleet
               </p>
             </div>
-            <h2 className="font-display text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
+            <h2 className="font-display text-white text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
               Three trailers.
               <br />
               <span className="font-news lowercase normal-case text-[#bcbcbc] text-4xl sm:text-5xl lg:text-6xl">one</span>{" "}
-              <span className="text-[#3db8f2] underline-marker underline-marker-blue">standard.</span>
+              <span className="text-gold underline-marker underline-marker-orange">standard.</span>
             </h2>
           </div>
           <p className="text-[#a3a3a3] max-w-sm text-base leading-relaxed font-body">
@@ -60,7 +60,7 @@ export default function Trailers() {
               </div>
 
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="font-display text-[#e8d2a4] text-2xl sm:text-3xl uppercase leading-none mb-2">
+                <h3 className="font-display text-white text-2xl sm:text-3xl uppercase leading-none mb-2">
                   {t.name}
                 </h3>
                 <p className="font-news text-[#bcbcbc] text-base italic mb-5">{t.tagline}</p>

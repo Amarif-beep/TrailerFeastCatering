@@ -24,10 +24,10 @@ export default function FAQ() {
             </p>
             <span className="h-px w-10 bg-[#f26b2e]" />
           </div>
-          <h2 className="font-display text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
+          <h2 className="font-display text-white text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
             Things people
             <br />
-            <span className="text-[#e63ebd] underline-marker">ask us.</span>
+            <span className="text-gold underline-marker underline-marker-orange">ask us.</span>
           </h2>
         </div>
 

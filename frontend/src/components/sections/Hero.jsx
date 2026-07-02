@@ -80,22 +80,22 @@ export default function Hero() {
 
           <h1
             data-testid="hero-headline"
-            className="font-display uppercase text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.88] tracking-tight"
+            className="font-display uppercase text-white text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.88] tracking-tight"
           >
             Street food
             <br />
             <span className="font-news lowercase normal-case text-[#bcbcbc] text-4xl sm:text-5xl lg:text-6xl">done</span>{" "}
-            <span className="underline-marker">right</span>.
+            <span className="text-gold underline-marker">right</span>.
           </h1>
 
-          <p className="mt-6 max-w-xl text-[#bcbcbc] text-base sm:text-lg leading-relaxed font-body">
-            Three mobile trailers serving <span className="text-[#e8d2a4] font-medium">events, festivals,
+          <p className="mt-6 max-w-xl text-[#dcdcdc] text-base sm:text-lg leading-relaxed font-body">
+            Three mobile trailers serving <span className="text-white font-medium">events, festivals,
             weddings and private bookings</span> across the Midlands. Fully insured, fully
             self-contained, and built to draw a queue.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <button data-testid="hero-cta-book" onClick={() => go("booking")} className="btn-pink">
+            <button data-testid="hero-cta-book" onClick={() => go("booking")} className="btn-gold">
               <CalendarCheck size={18} /> Book Us For Your Event
             </button>
             <button data-testid="hero-cta-trailers" onClick={() => go("trailers")} className="btn-ghost">
@@ -104,17 +104,17 @@ export default function Hero() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
-            <span className="flex items-center gap-2 font-display uppercase tracking-[0.18em] text-[#e8d2a4]">
+            <span className="flex items-center gap-2 font-display uppercase tracking-[0.18em] text-white">
               <span className="w-2.5 h-2.5 rounded-full bg-[#3db8f2] animate-pulse" />
               Now Taking 2026 Bookings
             </span>
             <span className="flex items-center gap-2 text-[#bcbcbc]">
               <span className="flex gap-0.5">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={14} className="fill-[#f26b2e] text-[#f26b2e]" />
+                  <Star key={i} size={14} className="fill-[var(--gold)] text-[var(--gold)]" />
                 ))}
               </span>
-              <span className="font-display uppercase tracking-[0.16em] text-[#e8d2a4]">
+              <span className="font-display uppercase tracking-[0.16em] text-white">
                 100% Recommended
               </span>
             </span>

@@ -34,17 +34,17 @@ export default function About() {
                 Our Story
               </p>
             </div>
-            <h2 className="font-display text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
+            <h2 className="font-display text-white text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
               Built in
               <br />
-              <span className="text-[#3db8f2] underline-marker underline-marker-blue">Daventry.</span>
+              <span className="text-gold underline-marker underline-marker-orange">Daventry.</span>
               <br />
               <span className="font-news lowercase normal-case text-[#bcbcbc] text-4xl sm:text-5xl lg:text-6xl">Fed by you.</span>
             </h2>
           </div>
 
-          <div className="lg:col-span-7 space-y-5 text-[#bcbcbc] text-base sm:text-lg leading-relaxed font-body">
-            <p className="text-[#e8d2a4] text-xl sm:text-2xl leading-snug font-news italic">
+          <div className="lg:col-span-7 space-y-5 text-[#dcdcdc] text-base sm:text-lg leading-relaxed font-body">
+            <p className="text-white text-xl sm:text-2xl leading-snug font-news italic">
               The Hungry Trailer is a small, independent mobile food van based at
               Casey's Pub, Daventry — serving honest, hand-made street food to a
               community that's never been shy about telling us when something tastes right.
