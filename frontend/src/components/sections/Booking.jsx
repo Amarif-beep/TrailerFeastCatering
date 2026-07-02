@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Send, PartyPopper, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { TRAILERS } from "../../lib/trailers";
+import PaintSplatter from "../decor/PaintSplatter";
 
 const EVENT_TYPES = [
   "Private Party",
@@ -8,25 +10,41 @@ const EVENT_TYPES = [
   "Corporate Event",
   "Festival",
   "Birthday",
+  "Pub Night",
   "Other",
 ];
 
-const initial = {
+const initial = (defaultTrailerId, defaultDate) => ({
   name: "",
   email: "",
   phone: "",
-  event_date: "",
+  trailer_id: defaultTrailerId || TRAILERS[0].id,
+  event_date: defaultDate || "",
+  event_location: "",
   event_type: EVENT_TYPES[0],
-  guest_count: 30,
+  guest_count: 50,
+  electricity_available: false,
   message: "",
-};
+});
 
-export default function Booking() {
-  const [form, setForm] = useState(initial);
+export default function Booking({ defaultTrailerId, defaultDate }) {
+  const [form, setForm] = useState(initial(defaultTrailerId, defaultDate));
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
 
-  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+  // If the parent updates the defaults (e.g. calendar picks a date), sync in.
+  useEffect(() => {
+    setForm((f) => ({
+      ...f,
+      trailer_id: defaultTrailerId || f.trailer_id,
+      event_date: defaultDate || f.event_date,
+    }));
+  }, [defaultTrailerId, defaultDate]);
+
+  const update = (k) => (e) => {
+    const v = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    setForm((f) => ({ ...f, [k]: v }));
+  };
 
   const submit = async (e) => {
     e.preventDefault();
@@ -42,11 +60,12 @@ export default function Booking() {
       });
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
-        throw new Error(err.detail?.[0]?.msg || "Booking failed");
+        const msg = typeof err.detail === "string" ? err.detail : err.detail?.[0]?.msg || "Booking failed";
+        throw new Error(msg);
       }
       setDone(true);
       toast.success("Booking request sent!");
-      setForm(initial);
+      setForm(initial(defaultTrailerId, defaultDate));
     } catch (err) {
       toast.error(err.message || "Something went wrong. Try again.");
     } finally {
@@ -60,26 +79,28 @@ export default function Booking() {
       data-testid="booking-section"
       className="relative py-24 md:py-32 px-5 md:px-8 bg-[#050505] overflow-hidden"
     >
-      <div className="spray" style={{ background: "#f26b2e", width: 460, height: 460, bottom: "-150px", right: "-100px", opacity: 0.25 }} />
+      <div className="spray" style={{ background: "#f26b2e", width: 460, height: 460, bottom: "-150px", right: "-100px", opacity: 0.22 }} />
       <div className="spray" style={{ background: "#e63ebd", width: 380, height: 380, top: "-100px", left: "-80px", opacity: 0.2 }} />
+      <PaintSplatter variant="splat1" color="#3db8f2" size={220} style={{ top: "5%", right: "8%" }} rotate={20} opacity={0.4} />
+      <PaintSplatter variant="drip" color="#f26b2e" size={140} style={{ bottom: "10%", left: "5%" }} rotate={-15} opacity={0.5} />
 
       <div className="relative max-w-4xl mx-auto">
         <div className="mb-12 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="h-px w-10 bg-[#e63ebd]" />
             <p className="font-display text-[#e63ebd] text-sm uppercase tracking-[0.32em]">
-              Catering & Events
+              Booking Enquiry
             </p>
             <span className="h-px w-10 bg-[#e63ebd]" />
           </div>
           <h2 className="font-display text-[#e8d2a4] text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85] mb-5">
             Book the
             <br />
-            <span className="text-[#3db8f2] underline-marker underline-marker-blue">Trailer.</span>
+            <span className="text-[#3db8f2] underline-marker underline-marker-blue">trailer.</span>
           </h2>
           <p className="text-[#a3a3a3] max-w-xl mx-auto text-base leading-relaxed font-body">
-            Weddings, festivals, birthdays, corporate days, street parties — share a few
-            details and we'll come back within 24 hours with availability and a quote.
+            Share a few details and we'll come back within 24 hours with availability,
+            a tailored menu and a quote.
           </p>
         </div>
 
@@ -93,7 +114,7 @@ export default function Booking() {
             <h3 className="font-display text-4xl uppercase mb-3 tracking-wide">Request Sent</h3>
             <p className="mb-7 text-base leading-relaxed max-w-md mx-auto font-body">
               Thanks — we've got your details. Expect a reply within 24 hours with
-              availability and a tailored quote.
+              availability, a menu and a quote.
             </p>
             <button
               data-testid="booking-another-btn"
@@ -116,111 +137,65 @@ export default function Booking() {
 
             <div className="grid sm:grid-cols-2 gap-7 mt-4">
               <div>
-                <label className="tht-label" htmlFor="bk-name">
-                  Your Name *
-                </label>
-                <input
-                  id="bk-name"
-                  data-testid="booking-name"
-                  required
-                  className="tht-input"
-                  placeholder="Jane Doe"
-                  value={form.name}
-                  onChange={update("name")}
-                />
+                <label className="tht-label" htmlFor="bk-name">Your Name *</label>
+                <input id="bk-name" data-testid="booking-name" required className="tht-input" placeholder="Jane Doe" value={form.name} onChange={update("name")} />
               </div>
               <div>
-                <label className="tht-label" htmlFor="bk-email">
-                  Email *
-                </label>
-                <input
-                  id="bk-email"
-                  data-testid="booking-email"
-                  type="email"
-                  required
-                  className="tht-input"
-                  placeholder="you@email.com"
-                  value={form.email}
-                  onChange={update("email")}
-                />
+                <label className="tht-label" htmlFor="bk-email">Email *</label>
+                <input id="bk-email" data-testid="booking-email" type="email" required className="tht-input" placeholder="you@email.com" value={form.email} onChange={update("email")} />
               </div>
               <div>
-                <label className="tht-label" htmlFor="bk-phone">
-                  Phone *
-                </label>
-                <input
-                  id="bk-phone"
-                  data-testid="booking-phone"
-                  type="tel"
-                  required
-                  className="tht-input"
-                  placeholder="07XXX XXXXXX"
-                  value={form.phone}
-                  onChange={update("phone")}
-                />
+                <label className="tht-label" htmlFor="bk-phone">Phone *</label>
+                <input id="bk-phone" data-testid="booking-phone" type="tel" required className="tht-input" placeholder="07XXX XXXXXX" value={form.phone} onChange={update("phone")} />
               </div>
               <div>
-                <label className="tht-label" htmlFor="bk-date">
-                  Event Date *
-                </label>
-                <input
-                  id="bk-date"
-                  data-testid="booking-date"
-                  type="date"
-                  required
-                  className="tht-input"
-                  value={form.event_date}
-                  onChange={update("event_date")}
-                />
-              </div>
-              <div>
-                <label className="tht-label" htmlFor="bk-type">
-                  Event Type *
-                </label>
-                <select
-                  id="bk-type"
-                  data-testid="booking-type"
-                  required
-                  className="tht-input bg-[#0a0a0a]"
-                  value={form.event_type}
-                  onChange={update("event_type")}
-                >
-                  {EVENT_TYPES.map((t) => (
-                    <option key={t} value={t} className="bg-[#0a0a0a]">
-                      {t}
-                    </option>
+                <label className="tht-label" htmlFor="bk-trailer">Which Trailer *</label>
+                <select id="bk-trailer" data-testid="booking-trailer" required className="tht-input bg-[#0a0a0a]" value={form.trailer_id} onChange={update("trailer_id")}>
+                  {TRAILERS.map((t) => (
+                    <option key={t.id} value={t.id} className="bg-[#0a0a0a]">{t.name}</option>
                   ))}
                 </select>
               </div>
               <div>
-                <label className="tht-label" htmlFor="bk-guests">
-                  Approx. Guests *
-                </label>
-                <input
-                  id="bk-guests"
-                  data-testid="booking-guests"
-                  type="number"
-                  min={1}
-                  required
-                  className="tht-input"
-                  value={form.guest_count}
-                  onChange={update("guest_count")}
-                />
+                <label className="tht-label" htmlFor="bk-date">Event Date *</label>
+                <input id="bk-date" data-testid="booking-date" type="date" required className="tht-input" value={form.event_date} onChange={update("event_date")} />
+              </div>
+              <div>
+                <label className="tht-label" htmlFor="bk-loc">Event Location *</label>
+                <input id="bk-loc" data-testid="booking-location" type="text" required className="tht-input" placeholder="Postcode or venue name" value={form.event_location} onChange={update("event_location")} />
+              </div>
+              <div>
+                <label className="tht-label" htmlFor="bk-type">Event Type *</label>
+                <select id="bk-type" data-testid="booking-type" required className="tht-input bg-[#0a0a0a]" value={form.event_type} onChange={update("event_type")}>
+                  {EVENT_TYPES.map((t) => (
+                    <option key={t} value={t} className="bg-[#0a0a0a]">{t}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="tht-label" htmlFor="bk-guests">Approx. Guests *</label>
+                <input id="bk-guests" data-testid="booking-guests" type="number" min={1} required className="tht-input" value={form.guest_count} onChange={update("guest_count")} />
               </div>
             </div>
-            <div className="mt-7">
-              <label className="tht-label" htmlFor="bk-msg">
-                Tell us about it
-              </label>
-              <textarea
-                id="bk-msg"
-                data-testid="booking-message"
-                rows={4}
-                className="tht-input resize-none"
-                placeholder="Where? What time? Any food preferences or dietary requirements?"
-                value={form.message}
-                onChange={update("message")}
+
+            <div className="mt-7 flex items-start gap-3 p-4 border-2 border-[#2a2a2a] bg-[#050505]">
+              <input
+                id="bk-elec"
+                data-testid="booking-electricity"
+                type="checkbox"
+                className="mt-1 w-5 h-5 accent-[#e63ebd]"
+                checked={form.electricity_available}
+                onChange={update("electricity_available")}
               />
+              <label htmlFor="bk-elec" className="text-sm text-[#e8d2a4] font-body cursor-pointer">
+                <span className="font-display uppercase tracking-[0.14em] text-[#3db8f2] text-xs block mb-1">Electricity On Site</span>
+                Tick if the venue has a 16A or 32A hook-up available. If unticked we'll bring our silent generator.
+              </label>
+            </div>
+
+            <div className="mt-6">
+              <label className="tht-label" htmlFor="bk-msg">Tell us about it</label>
+              <textarea id="bk-msg" data-testid="booking-message" rows={4} className="tht-input resize-none" placeholder="Any dietary requirements, timing, menu preferences?" value={form.message} onChange={update("message")} />
             </div>
 
             <button
@@ -232,7 +207,7 @@ export default function Booking() {
               {submitting ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
               {submitting ? "Sending..." : "Send Booking Request"}
             </button>
-            <p className="text-xs text-[#a3a3a3] mt-5">
+            <p className="text-xs text-[#a3a3a3] mt-5 font-body">
               By submitting you agree to be contacted by The Hungry Trailer regarding your event.
             </p>
           </form>

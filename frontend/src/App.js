@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import TrailerDetail from "./pages/TrailerDetail";
 import { Toaster } from "sonner";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/trailers/:id" element={<TrailerDetail />} />
         </Routes>
       </BrowserRouter>
       <Toaster

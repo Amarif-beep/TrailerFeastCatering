@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Menu as MenuIcon, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { LOGO_URL } from "../../lib/content";
 
 const NAV = [
-  { label: "Menu", id: "menu" },
+  { label: "Trailers", id: "trailers" },
   { label: "About", id: "about" },
   { label: "Reviews", id: "reviews" },
+  { label: "FAQ", id: "faq" },
   { label: "Find Us", id: "find-us" },
-  { label: "Book Event", id: "booking" },
+  { label: "Book", id: "booking" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -22,6 +26,15 @@ export default function Header() {
 
   const go = (id) => {
     setOpen(false);
+    if (location.pathname !== "/") {
+      navigate(`/#${id}`);
+      // Slight delay so Home renders before scroll
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+      return;
+    }
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };

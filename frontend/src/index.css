@@ -293,6 +293,69 @@ body {
 /* Selection */
 ::selection { background: var(--pink); color: #050505; }
 
+/* ---------- react-day-picker overrides ---------- */
+.tht-daypicker .rdp-root {
+    --rdp-accent-color: #e63ebd;
+    --rdp-accent-background-color: #e63ebd;
+    --rdp-background-color: transparent;
+    --rdp-outline: 2px solid #e8d2a4;
+    --rdp-outline-selected: 2px solid #000;
+    --rdp-day-height: 2.4rem;
+    --rdp-day-width: 2.4rem;
+    color: #e8d2a4;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+.tht-daypicker .rdp-caption_label,
+.tht-daypicker .rdp-nav_button,
+.tht-daypicker button.rdp-button_previous,
+.tht-daypicker button.rdp-button_next {
+    color: #e8d2a4;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.tht-daypicker .rdp-month_caption,
+.tht-daypicker .rdp-caption_label {
+    font-size: 1rem;
+    color: #e8d2a4;
+}
+.tht-daypicker .rdp-weekday {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    color: #3db8f2;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.7rem;
+}
+.tht-daypicker .rdp-day {
+    color: #e8d2a4;
+    border-radius: 0;
+}
+.tht-daypicker .rdp-day_button {
+    border-radius: 0;
+    color: inherit;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600;
+}
+.tht-daypicker .rdp-day_button:hover:not(:disabled) {
+    background: #2a2a2a;
+    color: #e8d2a4;
+}
+.tht-daypicker .rdp-day.rdp-selected .rdp-day_button {
+    background: #e63ebd !important;
+    color: #050505 !important;
+    border: 2px solid #000 !important;
+}
+.tht-daypicker .rdp-day_button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+.tht-daypicker .rdp-today .rdp-day_button {
+    color: #3db8f2;
+    font-weight: 800;
+}
+
 /* Shadcn dark vars (kept for compatibility) */
 @layer base {
     :root {
