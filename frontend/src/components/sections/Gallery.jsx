@@ -4,10 +4,10 @@ import PaintSplatter from "../decor/PaintSplatter";
 
 const PHOTOS = [
   { src: IMAGES.smashBurgerGrill, alt: "Smash burger fresh off the grill", tag: "Off The Grill", color: "#e63ebd", h: "h-[420px]" },
-  { src: IMAGES.chilliSpud, alt: "Loaded chilli spud with sour cream", tag: "Chilli Loaded Spud", color: "#f26b2e", h: "h-[300px]" },
+  { src: IMAGES.trailerRearSun, alt: "The Hungry Trailer wrapped in graffiti", tag: "The Trailer", color: "#f26b2e", h: "h-[300px]" },
   { src: IMAGES.nutellaCrepe, alt: "Fresh Nutella crepe", tag: "Nutella Crepe", color: "#3db8f2", h: "h-[300px]" },
   { src: IMAGES.loadedFriesPickles, alt: "Loaded fries with pickles & sauce", tag: "Loaded Fries", color: "#3db8f2", h: "h-[420px]" },
-  { src: IMAGES.breakfastMenu, alt: "Breakfast deals", tag: "Breakfast Deals", color: "#e63ebd", h: "h-[300px]" },
+  { src: IMAGES.trailerRear, alt: "Trailer parked & ready for bookings", tag: "Bookings Open", color: "#e63ebd", h: "h-[300px]" },
   { src: IMAGES.pulledPorkSpud, alt: "Pulled pork spud", tag: "Pulled Pork Spud", color: "#f26b2e", h: "h-[420px]" },
 ];
 

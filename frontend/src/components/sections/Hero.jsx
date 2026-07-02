@@ -57,8 +57,8 @@ export default function Hero() {
               style={{ transform: "rotate(-7deg)", boxShadow: "8px 8px 0 #3db8f2" }}
             >
               <img
-                src={IMAGES.trailerStreet}
-                alt="The trailer at a market"
+                src={IMAGES.trailerRearSun}
+                alt="The Hungry Trailer wrapped in graffiti"
                 className="w-full h-full object-cover"
               />
             </div>

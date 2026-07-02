@@ -18,6 +18,8 @@ export const IMAGES = {
   smashBurgerGrill: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/pkq64i8f_zzQI4.jpeg",
   eventCollage: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/w5gec7hu_723407060_1722991069021464_3016211125033517793_n.png.jpeg",
   loadedFriesPickles: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/mc6mcrn7_736921656_122180702018953077_3592486231315210934_n.jpg",
+  trailerRear: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/1sgb30el_783BD317-0213-44E9-95BC-B6A178A644C3.jpeg",
+  trailerRearSun: "https://customer-assets.emergentagent.com/job_graffiti-grub/artifacts/g0ch8hvv_C9F59015-0A6D-414A-B94E-B6E91CCF9859.jpeg",
 };
 
 export const SOCIALS = {

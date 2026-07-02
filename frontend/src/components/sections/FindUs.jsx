@@ -190,16 +190,16 @@ export default function FindUs() {
           </div>
         </div>
 
-        {/* Events callout w/ event collage photo */}
+        {/* Events callout w/ trailer photo */}
         <div className="mt-14 grid lg:grid-cols-12 gap-6 items-stretch">
           <div className="lg:col-span-7 relative border-2 border-[#e8d2a4] overflow-hidden" style={{ boxShadow: "10px 10px 0 #000" }}>
             <img
-              src={IMAGES.eventCollage}
-              alt="The Hungry Trailer at events"
+              src={IMAGES.trailerRear}
+              alt="The Hungry Trailer ready for events — Events, Bookings graffiti"
               className="w-full h-full object-cover min-h-[300px]"
             />
             <div className="absolute top-4 left-4 bg-[#e63ebd] text-black border-2 border-black px-3 py-1.5 font-display uppercase text-xs tracking-[0.18em]" style={{ boxShadow: "3px 3px 0 #000" }}>
-              Event Partners
+              Bookings Open
             </div>
           </div>
           <div className="lg:col-span-5 bg-[#050505] border-2 border-[#2a2a2a] p-7 flex flex-col justify-center">

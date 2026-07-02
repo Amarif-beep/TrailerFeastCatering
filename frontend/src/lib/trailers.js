@@ -8,8 +8,10 @@ export const TRAILERS = [
     name: "The Hungry Trailer",
     tagline: "The original — spuds, smash burgers, fries & desserts.",
     accent: "#e63ebd",
-    hero: IMAGES.trailerStreet,
+    hero: IMAGES.trailerRearSun,
     gallery: [
+      IMAGES.trailerRearSun,
+      IMAGES.trailerRear,
       IMAGES.trailerStreet,
       IMAGES.pulledPorkSpud,
       IMAGES.smashBurgerGrill,
