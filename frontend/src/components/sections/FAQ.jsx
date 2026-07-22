@@ -10,24 +10,21 @@ export default function FAQ() {
     <section
       id="faq"
       data-testid="faq-section"
-      className="relative py-24 md:py-32 px-5 md:px-8 bg-[#050505] overflow-hidden"
+      className="relative py-14 md:py-20 px-5 md:px-8 bg-[#0a0a0a] overflow-hidden"
     >
-      <PaintSplatter variant="splat2" color="#3db8f2" size={220} style={{ top: "5%", left: "5%" }} rotate={20} opacity={0.35} />
-      <PaintSplatter variant="drip" color="#e63ebd" size={150} style={{ bottom: "10%", right: "5%" }} rotate={-15} opacity={0.4} />
+      <PaintSplatter variant="splat2" color="#3db8f2" size={160} style={{ top: "5%", left: "5%" }} rotate={20} opacity={0.3} />
 
-      <div className="max-w-4xl mx-auto relative">
-        <div className="mb-12 text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="h-px w-10 bg-[#f26b2e]" />
-            <p className="font-display text-[#f26b2e] text-sm uppercase tracking-[0.32em]">
+      <div className="max-w-3xl mx-auto relative">
+        <div className="mb-8 text-center">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <span className="h-px w-8 bg-[#f26b2e]" />
+            <p className="font-display text-[#f26b2e] text-xs uppercase tracking-[0.3em]">
               FAQ
             </p>
-            <span className="h-px w-10 bg-[#f26b2e]" />
+            <span className="h-px w-8 bg-[#f26b2e]" />
           </div>
-          <h2 className="font-display text-white text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
-            Things people
-            <br />
-            <span className="text-gold underline-marker underline-marker-orange">ask us.</span>
+          <h2 className="font-display text-white text-3xl sm:text-4xl uppercase leading-none">
+            Things people <span className="text-gold underline-marker underline-marker-orange">ask us.</span>
           </h2>
         </div>
 

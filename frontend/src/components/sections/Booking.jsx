@@ -77,30 +77,25 @@ export default function Booking({ defaultTrailerId, defaultDate }) {
     <section
       id="booking"
       data-testid="booking-section"
-      className="relative py-24 md:py-32 px-5 md:px-8 bg-[#050505] overflow-hidden"
+      className="relative py-14 md:py-20 px-5 md:px-8 bg-[#050505] overflow-hidden"
     >
-      <div className="spray" style={{ background: "#f26b2e", width: 460, height: 460, bottom: "-150px", right: "-100px", opacity: 0.22 }} />
-      <div className="spray" style={{ background: "#e63ebd", width: 380, height: 380, top: "-100px", left: "-80px", opacity: 0.2 }} />
-      <PaintSplatter variant="splat1" color="#3db8f2" size={220} style={{ top: "5%", right: "8%" }} rotate={20} opacity={0.4} />
-      <PaintSplatter variant="drip" color="#f26b2e" size={140} style={{ bottom: "10%", left: "5%" }} rotate={-15} opacity={0.5} />
+      <div className="spray" style={{ background: "#f26b2e", width: 360, height: 360, bottom: "-140px", right: "-100px", opacity: 0.2 }} />
 
-      <div className="relative max-w-4xl mx-auto">
-        <div className="mb-12 text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="h-px w-10 bg-[#e63ebd]" />
-            <p className="font-display text-[#e63ebd] text-sm uppercase tracking-[0.32em]">
+      <div className="relative max-w-3xl mx-auto">
+        <div className="mb-8 text-center">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <span className="h-px w-8 bg-[#e63ebd]" />
+            <p className="font-display text-[#e63ebd] text-xs uppercase tracking-[0.3em]">
               Booking Enquiry
             </p>
-            <span className="h-px w-10 bg-[#e63ebd]" />
+            <span className="h-px w-8 bg-[#e63ebd]" />
           </div>
-          <h2 className="font-display text-white text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85] mb-5">
-            Book the
-            <br />
-            <span className="text-gold underline-marker underline-marker-orange">trailer.</span>
+          <h2 className="font-display text-white text-3xl sm:text-4xl uppercase leading-none mb-3">
+            Book the <span className="text-gold underline-marker underline-marker-orange">trailer.</span>
           </h2>
-          <p className="text-[#a3a3a3] max-w-xl mx-auto text-base leading-relaxed font-body">
+          <p className="text-[#a3a3a3] max-w-lg mx-auto text-sm leading-relaxed font-body">
             Share a few details and we'll come back within 24 hours with availability,
-            a tailored menu and a quote.
+            a menu and a quote.
           </p>
         </div>
 

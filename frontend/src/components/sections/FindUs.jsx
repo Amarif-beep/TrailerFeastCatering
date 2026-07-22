@@ -18,45 +18,37 @@ export default function FindUs() {
     <section
       id="find-us"
       data-testid="find-us-section"
-      className="relative py-24 md:py-32 px-5 md:px-8 bg-[#0a0a0a] overflow-hidden"
+      className="relative py-14 md:py-20 px-5 md:px-8 bg-[#0a0a0a] overflow-hidden"
     >
-      <div className="spray" style={{ background: "#3db8f2", width: 380, height: 380, top: "-100px", left: "10%", opacity: 0.18 }} />
-      <PaintSplatter variant="splat1" color="#f26b2e" size={220} style={{ top: "5%", right: "5%" }} rotate={20} opacity={0.45} />
-      <PaintSplatter variant="drip" color="#e63ebd" size={150} style={{ bottom: "25%", left: "3%" }} rotate={-10} opacity={0.5} />
-      <PaintSplatter variant="splat2" color="#3db8f2" size={180} style={{ top: "50%", left: "48%" }} rotate={35} opacity={0.22} />
+      <div className="spray" style={{ background: "#3db8f2", width: 320, height: 320, top: "-100px", left: "10%", opacity: 0.15 }} />
 
-      <div className="max-w-7xl mx-auto relative">
-        <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div className="max-w-6xl mx-auto relative">
+        <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-10 bg-[#f26b2e]" />
-              <p className="font-display text-[#f26b2e] text-sm uppercase tracking-[0.32em]">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-px w-8 bg-[#f26b2e]" />
+              <p className="font-display text-[#f26b2e] text-xs uppercase tracking-[0.3em]">
                 Find Us
               </p>
             </div>
-            <h2 className="font-display text-white text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.85]">
-              Park up.
-              <br />
-              <span className="text-gold underline-marker underline-marker-orange">Order up.</span>
+            <h2 className="font-display text-white text-3xl sm:text-4xl uppercase leading-none">
+              Park up. <span className="text-gold underline-marker underline-marker-orange">Order up.</span>
             </h2>
           </div>
-          <p className="text-[#a3a3a3] max-w-sm text-base leading-relaxed font-body">
-            Casey's Pub in Daventry six days a week — and rolling out across the Midlands for events.
+          <p className="text-[#a3a3a3] max-w-xs text-sm leading-relaxed font-body">
+            Casey's Pub, Daventry — six days a week, plus events across the Midlands.
           </p>
         </div>
 
-        {/* PROMINENT FACEBOOK LIVE-LOCATIONS BANNER */}
+        {/* FACEBOOK LIVE-LOCATIONS BANNER */}
         <a
           href={SOCIALS.facebook}
           target="_blank"
           rel="noopener noreferrer"
           data-testid="facebook-live-banner"
-          className="group relative block bg-gradient-to-br from-[#1877f2]/15 via-[#0a0a0a] to-[#e63ebd]/15 border-2 border-[#3db8f2] p-6 sm:p-8 mb-10 transition-transform hover:-translate-y-1"
-          style={{ boxShadow: "10px 10px 0 #000" }}
+          className="group relative block bg-gradient-to-br from-[#1877f2]/15 via-[#0a0a0a] to-[#e63ebd]/15 border-2 border-[#3db8f2] p-5 sm:p-6 mb-8 transition-transform hover:-translate-y-1"
+          style={{ boxShadow: "6px 6px 0 #000" }}
         >
-          <PaintSplatter variant="splat2" color="#3db8f2" size={180} style={{ top: -40, right: 20 }} rotate={15} opacity={0.35} />
-          <PaintSplatter variant="drip" color="#e63ebd" size={120} style={{ bottom: -30, left: "30%" }} rotate={-15} opacity={0.4} />
-
           <div className="relative flex flex-col md:flex-row md:items-center gap-6">
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#1877f2] border-2 border-black flex items-center justify-center shrink-0" style={{ boxShadow: "5px 5px 0 #000" }}>
               <Facebook size={36} className="text-white" fill="white" />
@@ -87,7 +79,7 @@ export default function FindUs() {
                 data-testid="location-map"
                 title="The Hungry Trailer location"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-1.180%2C52.250%2C-1.140%2C52.270&layer=mapnik&marker=52.2587%2C-1.1597"
-                className="w-full h-[360px] grayscale-[0.5] contrast-110"
+                className="w-full h-[280px] grayscale-[0.5] contrast-110"
                 loading="lazy"
               />
             </div>
@@ -187,39 +179,6 @@ export default function FindUs() {
                 Event days vary — check Facebook before you set off.
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* Events callout w/ trailer photo */}
-        <div className="mt-14 grid lg:grid-cols-12 gap-6 items-stretch">
-          <div className="lg:col-span-7 relative border-2 border-[#e8d2a4] overflow-hidden" style={{ boxShadow: "10px 10px 0 #000" }}>
-            <img
-              src={IMAGES.trailerRear}
-              alt="The Hungry Trailer ready for events — Events, Bookings graffiti"
-              className="w-full h-full object-cover min-h-[300px]"
-            />
-            <div className="absolute top-4 left-4 bg-[#e63ebd] text-black border-2 border-black px-3 py-1.5 font-display uppercase text-xs tracking-[0.18em]" style={{ boxShadow: "3px 3px 0 #000" }}>
-              Bookings Open
-            </div>
-          </div>
-          <div className="lg:col-span-5 bg-[#050505] border-2 border-[#2a2a2a] p-7 flex flex-col justify-center">
-            <Calendar size={28} className="text-[#f26b2e] mb-4" />
-            <h3 className="font-display text-[#e8d2a4] text-2xl sm:text-3xl uppercase leading-[0.95] mb-3">
-              Catch us at <span className="text-[#3db8f2] underline-marker underline-marker-blue">events</span>
-            </h3>
-            <p className="text-[#bcbcbc] font-body leading-relaxed mb-5">
-              From Heart of the Shires Shopping Village to local markets, festivals and private bookings —
-              we travel. The full list is always live on Facebook.
-            </p>
-            <a
-              href={SOCIALS.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-blue self-start text-sm"
-              data-testid="events-facebook-cta"
-            >
-              <Facebook size={16} /> See Upcoming Events
-            </a>
           </div>
         </div>
       </div>

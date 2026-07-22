@@ -5,8 +5,8 @@ import { LOGO_URL } from "../../lib/content";
 
 const NAV = [
   { label: "Trailers", id: "trailers" },
-  { label: "About", id: "about" },
   { label: "Reviews", id: "reviews" },
+  { label: "Gallery", id: "gallery" },
   { label: "FAQ", id: "faq" },
   { label: "Find Us", id: "find-us" },
   { label: "Book", id: "booking" },
