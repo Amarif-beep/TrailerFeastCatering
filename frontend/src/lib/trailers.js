@@ -1,148 +1,222 @@
 import { IMAGES } from "./content";
 
-// Trailer catalogue — mirrors backend /api/trailers.
-// Adds image galleries per trailer for the frontend.
+const STANDARD_INFO = [
+  "Fully insured",
+  "Food hygiene rated 5★",
+  "All equipment PAT tested",
+  "Gas safe registered",
+];
+
+const ALLERGEN_NOTE =
+  "We handle all major allergens in our kitchen. Please inform our team of any allergies or dietary requirements before ordering.";
+
 export const TRAILERS = [
   {
     id: "hungry-trailer",
-    name: "The Hungry Trailer",
-    tagline: "The original — spuds, smash burgers, fries & desserts.",
-    accent: "#e63ebd",
+    name: "Hungry Trailer",
+    type: "trailer",
+    tagline: "Our flagship trailer serving jacket potatoes, loaded fries, smash burgers and delicious desserts.",
+    accent: "#c9a04e",
     hero: IMAGES.trailerCloseup,
-    gallery: [
-      IMAGES.trailerCloseup,
-      IMAGES.trailerBackName,
-      IMAGES.trailerFullWrap,
-      IMAGES.trailerBackContact,
-      IMAGES.trailerSide,
-      IMAGES.trailerRearSun,
-      IMAGES.trailerRear,
-      IMAGES.pulledPorkSpud,
-      IMAGES.smashBurgerGrill,
-      IMAGES.chilliSpud,
-      IMAGES.loadedFriesPickles,
-      IMAGES.nutellaCrepe,
-      IMAGES.chalkboard,
-      IMAGES.jacketPotato,
-    ],
-    menu: [
-      "Jacket Potatoes (10+ toppings)",
-      "Smash Burgers",
-      "Loaded Fries",
-      "Fresh Crepes & Desserts",
-    ],
+    cardImg: IMAGES.trailerCloseup,
+    gallery: [IMAGES.trailerFullWrap, IMAGES.trailerBackName, IMAGES.trailerRearSun, IMAGES.trailerRear, IMAGES.trailerSide, IMAGES.pulledPorkSpud],
     description:
-      "Our flagship trailer and the one that started it all — a full mobile kitchen slinging our signature loaded jacket potatoes, smash burgers, loaded fries and fresh dessert crepes. Cooked to order on-site, graffitied inside and out, guaranteed to draw a queue.",
-    bestFor: ["Festivals", "Weddings", "Private events", "Corporate events", "Pub nights"],
-    setupSize: "3m x 6m footprint (plus awning/queue area)",
-    electricity: "1 x 32A hook-up OR self-contained via silent generator",
-    selfContained: true,
+      "Our flagship trailer serving a wide range of freshly made food. From loaded jacket potatoes and fries to smash burgers and sweet treats — there's something for everyone.",
+    specs: {
+      selfContained: "Self contained",
+      indoorOutdoor: "Indoor & outdoor events",
+      power: "Power requirement: 32A / 16A",
+      size: "Up to 7m x 2.3m",
+    },
     servingCapacity: "Up to 300 covers per event",
-    certificates: [
-      "£5m Public Liability Insurance",
-      "Level 2 Food Hygiene Certified",
-      "5-star Environmental Health Rating",
-      "PAT Tested / Gas Safe",
-      "HACCP Compliant",
+    info: STANDARD_INFO,
+    allergenNote: ALLERGEN_NOTE,
+    menu: ["Jacket Potatoes", "Loaded Fries", "Smash Burgers", "Desserts", "Drinks"],
+    menuDetail: [
+      {
+        id: "jacket-potatoes",
+        name: "Jacket Potatoes",
+        columns: [
+          { title: "Sides", items: [
+            { name: "Cheese", price: "£2.00" },
+            { name: "Beans", price: "£1.50" },
+            { name: "Tuna Mayo", price: "£2.00" },
+            { name: "Coleslaw", price: "£1.50" },
+          ]},
+          { title: "Main Toppings", items: [
+            { name: "Chicken Curry", price: "£3.50" },
+            { name: "Gulyás (Beef Stew)", price: "£3.50" },
+            { name: "Chilli Con Carne", price: "£3.00" },
+            { name: "Rosemary Lamb Ragu", price: "£3.50" },
+            { name: "Bolognese", price: "£3.00" },
+            { name: "BBQ Pulled Pork", price: "£2.00" },
+          ]},
+        ],
+        sample: { img: IMAGES.pulledPorkSpud, caption: "Build your perfect jacket potato!" },
+      },
+      {
+        id: "loaded-fries",
+        name: "Loaded Fries",
+        columns: [
+          { title: "Base", items: [
+            { name: "Skin-on Fries", price: "£3.50" },
+            { name: "Cheese Fries", price: "£4.50" },
+          ]},
+          { title: "Loaded", items: [
+            { name: "Dirty Bird (buttermilk chicken)", price: "£8.50" },
+            { name: "Smoked Brisket", price: "£9.50" },
+            { name: "Goulash Fries", price: "£9.00" },
+            { name: "Chilli Cheese", price: "£8.00" },
+          ]},
+        ],
+        sample: { img: IMAGES.loadedFriesPickles, caption: "Fully loaded, every time." },
+      },
+      {
+        id: "smash-burgers",
+        name: "Smash Burgers",
+        columns: [
+          { title: "Burgers", items: [
+            { name: "Single Smash", price: "£6.50" },
+            { name: "Double Smash", price: "£8.50" },
+            { name: "Bacon & Cheese", price: "£9.50" },
+          ]},
+          { title: "Add-ons", items: [
+            { name: "Extra Patty", price: "£2.50" },
+            { name: "Crispy Onions", price: "£1.00" },
+            { name: "Jalapeños", price: "£0.75" },
+          ]},
+        ],
+        sample: { img: IMAGES.smashBurgerGrill, caption: "Smashed fresh on the grill." },
+      },
+      {
+        id: "desserts",
+        name: "Desserts",
+        columns: [
+          { title: "Sweet Treats", items: [
+            { name: "Nutella & Banana Crepe", price: "£6.00" },
+            { name: "Biscoff Crepe", price: "£6.50" },
+            { name: "Lemon & Sugar Crepe", price: "£4.50" },
+          ]},
+        ],
+        sample: { img: IMAGES.nutellaCrepe, caption: "Fresh off the plancha." },
+      },
+      {
+        id: "drinks",
+        name: "Drinks",
+        columns: [
+          { title: "Cold", items: [
+            { name: "Cans (assorted)", price: "£1.50" },
+            { name: "Bottled Water", price: "£1.00" },
+          ]},
+          { title: "Hot", items: [
+            { name: "Tea", price: "£1.50" },
+            { name: "Coffee", price: "£2.00" },
+          ]},
+        ],
+        sample: { img: IMAGES.chalkboard, caption: "Ask about event drink packages." },
+      },
     ],
   },
   {
     id: "hungry-trailer-2",
-    name: "The Hungry Trailer 2.0",
-    tagline: "Smaller, faster, all the smash.",
-    accent: "#3db8f2",
+    name: "Hungry Trailer 2.0",
+    type: "van",
+    tagline: "Specialising in smash burgers, loaded fries and sweet treats. Perfect for any event.",
+    accent: "#c9a04e",
     hero: IMAGES.smashBurgerGrill,
-    gallery: [
-      IMAGES.smashBurgerGrill,
-      IMAGES.smashBurger,
-      IMAGES.loadedFriesPickles,
-      IMAGES.trailerAngled,
-      IMAGES.eventCollage,
-      IMAGES.breakfastMenu,
-    ],
-    menu: [
-      "Smash Burgers (Single / Double)",
-      "Loaded Fries",
-      "Brownie Bites",
-      "Tiramisu Cups",
-    ],
+    cardImg: IMAGES.trailerRearSun,
+    gallery: [IMAGES.smashBurgerGrill, IMAGES.smashBurger, IMAGES.loadedFriesPickles, IMAGES.trailerAngled, IMAGES.nutellaCrepe, IMAGES.eventCollage],
     description:
-      "Our smaller sister van built for events where speed and footprint matter. Same graffiti energy, dialled-in to smash burgers and loaded fries at volume, with a tight dessert list to send guests home happy.",
-    bestFor: ["Weddings", "Corporate lunches", "Small festivals", "Private parties", "Pop-ups"],
-    setupSize: "2.5m x 4m footprint",
-    electricity: "1 x 16A hook-up OR self-contained",
-    selfContained: true,
+      "Our smaller sister van built for events where speed and footprint matter. Dialled-in to smash burgers, loaded fries and sweet treats at volume.",
+    specs: {
+      selfContained: "Self contained",
+      indoorOutdoor: "Indoor & outdoor events",
+      power: "Power requirement: 16A",
+      size: "Up to 5m x 2.2m",
+    },
     servingCapacity: "Up to 150 covers per event",
-    certificates: [
-      "£5m Public Liability Insurance",
-      "Level 2 Food Hygiene Certified",
-      "5-star Environmental Health Rating",
-      "PAT Tested / Gas Safe",
-      "HACCP Compliant",
-    ],
-  },
-  {
-    id: "hungarian-trailer",
-    name: "Hungarian Cuisine Trailer",
-    tagline: "Paprika, soul, Eastern-European street food.",
-    accent: "#f26b2e",
-    hero: IMAGES.trailerAngled,
-    gallery: [
-      IMAGES.trailerAngled,
-      IMAGES.chilliSpud,
-      IMAGES.tunaSpud,
-      IMAGES.pulledPorkSpud,
-      IMAGES.eventCollage,
-    ],
-    menu: [
-      "Gulyás (Hungarian Goulash)",
-      "Chicken Paprikás with Nokedli Dumplings",
-      "Grilled Meats (Kolbász, pork skewers)",
-      "Lángos (fried dough)",
-      "Töltött Káposzta (stuffed cabbage)",
-    ],
-    description:
-      "An authentic Hungarian / Eastern-European kitchen on wheels — slow-cooked goulash, dumplings, grilled meats and lángos. Built for events that want something different from the usual burger-and-fries line-up.",
-    bestFor: ["Cultural festivals", "Weddings", "Corporate events", "Street food markets", "Private events"],
-    setupSize: "3m x 5m footprint",
-    electricity: "1 x 16A hook-up OR self-contained",
-    selfContained: true,
-    servingCapacity: "Up to 250 covers per event",
-    certificates: [
-      "£5m Public Liability Insurance",
-      "Level 2 Food Hygiene Certified",
-      "5-star Environmental Health Rating",
-      "PAT Tested / Gas Safe",
-      "HACCP Compliant",
+    info: STANDARD_INFO,
+    allergenNote: ALLERGEN_NOTE,
+    menu: ["Smash Burgers", "Loaded Fries", "Desserts", "Drinks"],
+    menuDetail: [
+      {
+        id: "smash-burgers",
+        name: "Smash Burgers",
+        columns: [
+          { title: "Burgers", items: [
+            { name: "Single Smash", price: "£6.50" },
+            { name: "Double Smash", price: "£8.50" },
+            { name: "Bacon & Cheese", price: "£9.50" },
+          ]},
+          { title: "Add-ons", items: [
+            { name: "Extra Patty", price: "£2.50" },
+            { name: "Crispy Onions", price: "£1.00" },
+          ]},
+        ],
+        sample: { img: IMAGES.smashBurgerGrill, caption: "Our signature double smash." },
+      },
+      {
+        id: "loaded-fries",
+        name: "Loaded Fries",
+        columns: [
+          { title: "Loaded", items: [
+            { name: "Dirty Bird", price: "£8.50" },
+            { name: "Chilli Cheese", price: "£8.00" },
+            { name: "Cheese & Bacon", price: "£7.50" },
+          ]},
+        ],
+        sample: { img: IMAGES.loadedFriesPickles, caption: "Golden, crispy, loaded." },
+      },
+      {
+        id: "desserts",
+        name: "Desserts",
+        columns: [
+          { title: "Sweet Treats", items: [
+            { name: "Brownie Bites", price: "£4.00" },
+            { name: "Tiramisu Cup", price: "£4.50" },
+            { name: "Nutella Crepe", price: "£6.00" },
+          ]},
+        ],
+        sample: { img: IMAGES.nutellaCrepe, caption: "Send them home happy." },
+      },
+      {
+        id: "drinks",
+        name: "Drinks",
+        columns: [
+          { title: "Cold", items: [
+            { name: "Cans (assorted)", price: "£1.50" },
+            { name: "Bottled Water", price: "£1.00" },
+          ]},
+        ],
+        sample: { img: IMAGES.smashBurger, caption: "Event drink packages available." },
+      },
     ],
   },
 ];
 
+// Coming-soon van (teaser only, no detail page)
+export const COMING_SOON = {
+  id: "van-3",
+  name: "Van No. 3",
+  type: "van",
+  tagline: "A third van is on the way — bigger menus, more events, coming soon.",
+  cardImg: IMAGES.trailerFullWrap,
+};
+
 export const TRAILERS_BY_ID = Object.fromEntries(TRAILERS.map((t) => [t.id, t]));
 
+export const WHY_BOOK = [
+  { icon: "settings", title: "Professional", text: "Reliable, experienced and fully insured." },
+  { icon: "utensils", title: "Quality Food", text: "Fresh ingredients, big flavours." },
+  { icon: "home", title: "Flexible Setups", text: "Indoor or outdoor, we've got you covered." },
+  { icon: "check", title: "Fully Equipped", text: "Self contained and event ready." },
+];
+
 export const FAQS = [
-  {
-    q: "How far do you travel?",
-    a: "We're based in Daventry and regularly travel across the Midlands. For events further afield (100+ miles), just get in touch — we usually make it work with a small travel supplement.",
-  },
-  {
-    q: "Do you need electricity?",
-    a: "We can run either off a hook-up (16A or 32A depending on trailer) or fully self-contained with our own silent generator. Just tell us what's available on the day.",
-  },
-  {
-    q: "Can you serve large events?",
-    a: "Yes. Our flagship Hungry Trailer serves up to 300 covers per event; the Hungarian Cuisine trailer up to 250; the 2.0 up to 150. For bigger events we can bring multiple trailers.",
-  },
-  {
-    q: "Do you have insurance and certificates?",
-    a: "Absolutely — £5m Public Liability, Level 2 Food Hygiene, 5-star Environmental Health rating, PAT-tested electrics, gas safety and full HACCP compliance. Documents available on request.",
-  },
-  {
-    q: "Do you take deposits?",
-    a: "Yes — we take a small deposit to confirm your date and hold the trailer. The balance is settled after the event. Full terms are shared with your quote.",
-  },
-  {
-    q: "Can menus be changed for the event?",
-    a: "Definitely. We often build custom menus around dietary requirements, event themes and budgets. Mention what you're after in your enquiry and we'll come back with options.",
-  },
+  { q: "How far do you travel?", a: "We're based in Daventry and travel across the Midlands. For events further afield, get in touch and we'll usually make it work with a small travel supplement." },
+  { q: "Do you need electricity?", a: "We can run off a hook-up (16A or 32A) or fully self-contained with our own silent generator — just tell us what's available." },
+  { q: "Can you serve large events?", a: "Yes. The Hungry Trailer serves up to 300 covers; the 2.0 up to 150. For bigger events we can bring both vans." },
+  { q: "Do you have insurance and certificates?", a: "£5m Public Liability, Level 2 Food Hygiene, 5-star Environmental Health, PAT-tested electrics and gas safety. Documents on request." },
+  { q: "Do you take deposits?", a: "Yes — a small deposit confirms your date and holds the van. The balance is settled after the event." },
+  { q: "Can menus be changed for the event?", a: "Definitely — we build custom menus around dietary needs, themes and budgets. Mention it in your enquiry." },
 ];

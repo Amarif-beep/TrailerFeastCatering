@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Menu as MenuIcon, X } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { LOGO_URL } from "../../lib/content";
 
 const NAV = [
-  { label: "Trailers", id: "trailers" },
-  { label: "Reviews", id: "reviews" },
-  { label: "Gallery", id: "gallery" },
-  { label: "FAQ", id: "faq" },
-  { label: "Find Us", id: "find-us" },
-  { label: "Book", id: "booking" },
+  { label: "Home", to: "/" },
+  { label: "Our Vans", to: "/#vans" },
+  { label: "Book & Contact", to: "/book" },
 ];
 
 export default function Header() {
@@ -19,96 +16,73 @@ export default function Header() {
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const go = (id) => {
+  const handleNav = (to) => {
     setOpen(false);
-    if (location.pathname !== "/") {
-      navigate(`/#${id}`);
-      // Slight delay so Home renders before scroll
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
-      return;
+    if (to.startsWith("/#")) {
+      const id = to.slice(2);
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 120);
+      } else {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate(to);
+      window.scrollTo(0, 0);
     }
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-
-  const isHome = location.pathname === "/";
-  const navText = isHome ? "text-[#0f0f0f]" : "text-[#e8d2a4]";
-  const headerScrolledBg = isHome
-    ? "bg-white/95 backdrop-blur-md border-b border-[#e2ddd3]"
-    : "bg-black/95 backdrop-blur-md border-b border-[#2a2a2a]";
-  const mobilePanelBg = isHome ? "bg-white border-t border-[#e2ddd3]" : "bg-black border-t border-[#2a2a2a]";
 
   return (
     <header
       data-testid="site-header"
       className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${
-        scrolled ? headerScrolledBg : "bg-transparent"
+        scrolled ? "bg-[#0f0d0b]/95 backdrop-blur-md border-b border-[#322a20]" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-3 flex items-center justify-between">
-        <button
-          onClick={() => go("hero")}
-          data-testid="header-logo-btn"
-          className="flex items-center gap-3 group"
-        >
-          <img
-            src={LOGO_URL}
-            alt="The Hungry Trailer"
-            className={`h-11 md:h-12 w-auto object-contain transition-transform group-hover:scale-105 ${isHome ? "rounded" : ""}`}
-          />
-        </button>
+        <Link to="/" onClick={() => window.scrollTo(0, 0)} data-testid="header-logo-btn" className="flex items-center gap-2">
+          <img src={LOGO_URL} alt="The Hungry Trailer" className="h-11 md:h-12 w-auto object-contain rounded" />
+        </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-2">
           {NAV.map((n) => (
             <button
-              key={n.id}
-              data-testid={`nav-${n.id}`}
-              onClick={() => go(n.id)}
-              className={`font-display text-sm uppercase tracking-[0.16em] ${navText} px-4 py-2 hover:text-[#e63ebd] transition-colors`}
+              key={n.label}
+              data-testid={`nav-${n.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
+              onClick={() => handleNav(n.to)}
+              className="font-display text-sm uppercase tracking-[0.14em] text-[#f5f1e8] px-4 py-2 hover:text-[#c9a04e] transition-colors"
             >
               {n.label}
             </button>
           ))}
-          <button
-            data-testid="nav-order-cta"
-            onClick={() => go("booking")}
-            className={`${isHome ? "btn-dark" : "btn-pink"} ml-3 text-sm`}
-            style={{ padding: "0.6rem 1.2rem" }}
-          >
-            Book Us
+          <button data-testid="nav-book-now" onClick={() => handleNav("/book")} className="btn-gold-pro ml-3 text-xs">
+            Book Now
           </button>
         </nav>
 
-        <button
-          data-testid="mobile-menu-toggle"
-          onClick={() => setOpen(!open)}
-          className={`md:hidden p-2 ${navText}`}
-          aria-label="Toggle menu"
-        >
+        <button data-testid="mobile-menu-toggle" onClick={() => setOpen(!open)} className="md:hidden p-2 text-[#f5f1e8]" aria-label="Toggle menu">
           {open ? <X size={28} /> : <MenuIcon size={28} />}
         </button>
       </div>
 
       {open && (
-        <div className={`md:hidden ${mobilePanelBg} px-5 py-6 flex flex-col gap-2`}>
+        <div className="md:hidden bg-[#0f0d0b] border-t border-[#322a20] px-5 py-6 flex flex-col gap-2">
           {NAV.map((n) => (
             <button
-              key={n.id}
-              data-testid={`mobile-nav-${n.id}`}
-              onClick={() => go(n.id)}
-              className={`font-display text-lg uppercase tracking-wider text-left py-2 ${navText} hover:text-[#e63ebd]`}
+              key={n.label}
+              data-testid={`mobile-nav-${n.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
+              onClick={() => handleNav(n.to)}
+              className="font-display text-lg uppercase tracking-wider text-left py-2 text-[#f5f1e8] hover:text-[#c9a04e]"
             >
               {n.label}
             </button>
           ))}
+          <button onClick={() => handleNav("/book")} className="btn-gold-pro mt-2 justify-center">Book Now</button>
         </div>
       )}
     </header>

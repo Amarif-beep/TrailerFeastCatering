@@ -1,32 +1,32 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import TrailerDetail from "./pages/TrailerDetail";
+import VanDetail from "./pages/VanDetail";
+import BookingContact from "./pages/BookingContact";
 import { Toaster } from "sonner";
 
 function App() {
   return (
     <div className="App">
-      <div className="noise-overlay" />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/trailers/:id" element={<TrailerDetail />} />
+          <Route path="/vans/:id" element={<VanDetail />} />
+          <Route path="/book" element={<BookingContact />} />
         </Routes>
       </BrowserRouter>
       <Toaster
         position="bottom-right"
         toastOptions={{
           style: {
-            background: "#e8d2a4",
-            color: "#050505",
-            border: "2px solid #000",
-            borderRadius: 0,
+            background: "#c9a04e",
+            color: "#17130d",
+            border: "none",
+            borderRadius: "4px",
             fontFamily: "'Big Shoulders Display', sans-serif",
             fontWeight: 900,
             textTransform: "uppercase",
             letterSpacing: "0.04em",
-            boxShadow: "6px 6px 0 0 #000",
           },
         }}
       />
