@@ -17,14 +17,14 @@ export default function Gallery() {
     <section
       id="gallery"
       data-testid="gallery-section"
-      className="relative py-14 md:py-20 px-5 md:px-8 bg-[#050505]"
+      className="relative py-16 md:py-24 px-5 md:px-8 bg-[#f5f2ec]"
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-8 flex items-center gap-3">
           <span className="h-px w-8 bg-[#e63ebd]" />
           <p className="font-display text-[#e63ebd] text-xs uppercase tracking-[0.3em]">Gallery</p>
-          <h2 className="font-display text-white text-2xl sm:text-3xl uppercase leading-none ml-2">
-            The <span className="text-gold">Goods</span>
+          <h2 className="font-display text-[#0f0f0f] text-2xl sm:text-3xl uppercase leading-none ml-2">
+            The <span className="ul-pink">Goods</span>
           </h2>
         </div>
 
@@ -33,7 +33,7 @@ export default function Gallery() {
             <div
               key={i}
               data-testid={`gallery-item-${i}`}
-              className="relative group overflow-hidden border border-[#2a2a2a] aspect-square"
+              className="relative group overflow-hidden border-2 border-[#0f0f0f] aspect-square"
             >
               <img
                 src={src}

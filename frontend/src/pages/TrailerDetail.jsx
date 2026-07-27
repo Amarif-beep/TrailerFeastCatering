@@ -7,6 +7,7 @@ import Booking from "../components/sections/Booking";
 import AvailabilityCalendar from "../components/AvailabilityCalendar";
 import PaintSplatter from "../components/decor/PaintSplatter";
 import MobileBookBar from "../components/MobileBookBar";
+import Reveal from "../components/Reveal";
 import { TRAILERS_BY_ID } from "../lib/trailers";
 
 export default function TrailerDetail() {
@@ -94,7 +95,7 @@ export default function TrailerDetail() {
 
       {/* GALLERY */}
       <section className="relative py-20 px-5 md:px-8 bg-[#0a0a0a]" data-testid={`trailer-gallery-${trailer.id}`}>
-        <div className="max-w-7xl mx-auto">
+        <Reveal className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-8">
             <span className="h-px w-10 bg-[#3db8f2]" />
             <p className="font-display text-[#3db8f2] text-sm uppercase tracking-[0.32em]">Gallery</p>
@@ -114,7 +115,7 @@ export default function TrailerDetail() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* WHAT WE SERVE + BEST FOR + SPECS */}

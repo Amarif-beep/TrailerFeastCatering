@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { FAQS } from "../../lib/trailers";
-import PaintSplatter from "../decor/PaintSplatter";
 
 export default function FAQ() {
   const [open, setOpen] = useState(0);
@@ -10,21 +9,17 @@ export default function FAQ() {
     <section
       id="faq"
       data-testid="faq-section"
-      className="relative py-14 md:py-20 px-5 md:px-8 bg-[#0a0a0a] overflow-hidden"
+      className="relative py-16 md:py-24 px-5 md:px-8 bg-white"
     >
-      <PaintSplatter variant="splat2" color="#3db8f2" size={160} style={{ top: "5%", left: "5%" }} rotate={20} opacity={0.3} />
-
       <div className="max-w-3xl mx-auto relative">
         <div className="mb-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-3">
             <span className="h-px w-8 bg-[#f26b2e]" />
-            <p className="font-display text-[#f26b2e] text-xs uppercase tracking-[0.3em]">
-              FAQ
-            </p>
+            <p className="font-display text-[#f26b2e] text-xs uppercase tracking-[0.3em]">FAQ</p>
             <span className="h-px w-8 bg-[#f26b2e]" />
           </div>
-          <h2 className="font-display text-white text-3xl sm:text-4xl uppercase leading-none">
-            Things people <span className="text-gold underline-marker underline-marker-orange">ask us.</span>
+          <h2 className="font-display text-[#0f0f0f] text-3xl sm:text-4xl uppercase leading-none">
+            Things people <span className="ul-orange">ask us.</span>
           </h2>
         </div>
 
@@ -35,29 +30,24 @@ export default function FAQ() {
               <div
                 key={i}
                 data-testid={`faq-item-${i}`}
-                className="bg-[#0a0a0a] border-2 border-[#2a2a2a] overflow-hidden transition-colors"
-                style={{ borderColor: isOpen ? "#e63ebd" : "#2a2a2a" }}
+                className="border-2 overflow-hidden transition-colors"
+                style={{ borderColor: isOpen ? "#e63ebd" : "#e2ddd3" }}
               >
                 <button
                   onClick={() => setOpen(isOpen ? -1 : i)}
-                  className="w-full flex items-center justify-between gap-4 text-left p-5 sm:p-6 hover:bg-[#111] transition-colors"
+                  className="w-full flex items-center justify-between gap-4 text-left p-5 hover:bg-[#faf8f5] transition-colors"
                   data-testid={`faq-toggle-${i}`}
                 >
-                  <span className="font-display text-[#e8d2a4] text-lg sm:text-xl uppercase tracking-wide">
-                    {f.q}
-                  </span>
+                  <span className="font-display text-[#0f0f0f] text-lg uppercase tracking-wide">{f.q}</span>
                   <span
-                    className="shrink-0 w-8 h-8 flex items-center justify-center border-2 border-black"
-                    style={{
-                      background: isOpen ? "#e63ebd" : "#e8d2a4",
-                      color: "#000",
-                    }}
+                    className="shrink-0 w-8 h-8 flex items-center justify-center border-2 border-[#0f0f0f]"
+                    style={{ background: isOpen ? "#e63ebd" : "#0f0f0f", color: "#fff" }}
                   >
                     {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                   </span>
                 </button>
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 -mt-1 text-[#bcbcbc] font-body text-base leading-relaxed">
+                  <div className="px-5 pb-5 -mt-1 text-[#444] font-body text-base leading-relaxed">
                     {f.a}
                   </div>
                 )}

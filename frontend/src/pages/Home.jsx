@@ -9,19 +9,20 @@ import FindUs from "../components/sections/FindUs";
 import Booking from "../components/sections/Booking";
 import Footer from "../components/sections/Footer";
 import MobileBookBar from "../components/MobileBookBar";
+import Reveal from "../components/Reveal";
 
 export default function Home() {
   return (
-    <div data-testid="home-page" className="relative graffiti-bg">
+    <div data-testid="home-page" className="relative light-home">
       <Header />
       <main>
         <Hero />
-        <Trailers />
-        <Reviews />
-        <Gallery />
-        <FAQ />
-        <FindUs />
-        <Booking />
+        <Reveal><Trailers /></Reveal>
+        <Reveal><Reviews /></Reveal>
+        <Reveal><Gallery /></Reveal>
+        <Reveal><FAQ /></Reveal>
+        <Reveal><FindUs /></Reveal>
+        <Reveal><Booking /></Reveal>
       </main>
       <Footer />
       <MobileBookBar />
