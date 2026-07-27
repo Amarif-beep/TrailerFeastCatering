@@ -4,6 +4,8 @@ import { Truck, Settings, UtensilsCrossed, Home as HomeIcon, CheckCircle2, Calen
 import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 import MobileBookBar from "../components/MobileBookBar";
+import MenuShowcase from "../components/sections/MenuShowcase";
+import GallerySection from "../components/sections/GallerySection";
 import Reveal from "../components/Reveal";
 import { TRAILERS, COMING_SOON, WHY_BOOK } from "../lib/trailers";
 import { IMAGES, REVIEWS } from "../lib/content";
@@ -58,27 +60,24 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {TRAILERS.map((t, i) => (
-              <Reveal key={t.id} delay={i * 110}>
-                <div data-testid={`van-card-${t.id}`} className="bg-white border border-[#e2dccd] rounded-lg overflow-hidden h-full flex flex-col group hover:shadow-xl transition-shadow">
-                  <div className="h-48 overflow-hidden">
-                    <img src={t.cardImg} alt={t.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1 text-center">
-                    <h3 className="font-display text-[#1a1611] text-2xl uppercase mb-3">{t.name}</h3>
-                    <p className="text-[#6a6355] font-body text-sm leading-relaxed mb-6 flex-1">{t.tagline}</p>
-                    <Link to={`/vans/${t.id}`} data-testid={`view-van-${t.id}`} className="btn-gold-pro justify-center text-xs">
-                      View Van <ArrowRight size={14} />
-                    </Link>
-                  </div>
+              <div key={t.id} data-testid={`van-card-${t.id}`} className="bg-white border border-[#e2dccd] rounded-lg overflow-hidden h-full flex flex-col group hover:shadow-xl transition-shadow">
+                <div className="h-48 overflow-hidden">
+                  <img src={t.cardImg} alt={t.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-              </Reveal>
+                <div className="p-6 flex flex-col flex-1 text-center">
+                  <h3 className="font-display text-[#1a1611] text-2xl uppercase mb-3">{t.name}</h3>
+                  <p className="text-[#6a6355] font-body text-sm leading-relaxed mb-6 flex-1">{t.tagline}</p>
+                  <Link to={`/vans/${t.id}`} data-testid={`view-van-${t.id}`} className="btn-gold-pro justify-center text-xs">
+                    View Van <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
             ))}
 
             {/* Coming soon */}
-            <Reveal delay={TRAILERS.length * 110}>
-              <div data-testid="van-card-coming-soon" className="relative bg-[#1a1611] border border-[#322a20] rounded-lg overflow-hidden h-full flex flex-col">
+            <div data-testid="van-card-coming-soon" className="relative bg-[#1a1611] border border-[#322a20] rounded-lg overflow-hidden h-full flex flex-col">
                 <div className="h-48 overflow-hidden relative">
                   <img src={COMING_SOON.cardImg} alt="" className="w-full h-full object-cover opacity-40 grayscale" />
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -93,10 +92,15 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-            </Reveal>
           </div>
         </div>
       </section>
+
+      {/* MENU */}
+      <MenuShowcase />
+
+      {/* GALLERY */}
+      <GallerySection />
 
       {/* WHY BOOK WITH US */}
       <section data-testid="why-book-section" className="relative py-16 md:py-24 px-5 md:px-8 bg-[#0f0d0b]">

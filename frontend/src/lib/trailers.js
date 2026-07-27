@@ -117,90 +117,15 @@ export const TRAILERS = [
       },
     ],
   },
-  {
-    id: "hungry-trailer-2",
-    name: "Hungry Trailer 2.0",
-    type: "van",
-    tagline: "Specialising in smash burgers, loaded fries and sweet treats. Perfect for any event.",
-    accent: "#c9a04e",
-    hero: IMAGES.smashBurgerGrill,
-    cardImg: IMAGES.trailerRearSun,
-    gallery: [IMAGES.smashBurgerGrill, IMAGES.smashBurger, IMAGES.loadedFriesPickles, IMAGES.trailerAngled, IMAGES.nutellaCrepe, IMAGES.eventCollage],
-    description:
-      "Our smaller sister van built for events where speed and footprint matter. Dialled-in to smash burgers, loaded fries and sweet treats at volume.",
-    specs: {
-      selfContained: "Self contained",
-      indoorOutdoor: "Indoor & outdoor events",
-      power: "Power requirement: 16A",
-      size: "Up to 5m x 2.2m",
-    },
-    servingCapacity: "Up to 150 covers per event",
-    info: STANDARD_INFO,
-    allergenNote: ALLERGEN_NOTE,
-    menu: ["Smash Burgers", "Loaded Fries", "Desserts", "Drinks"],
-    menuDetail: [
-      {
-        id: "smash-burgers",
-        name: "Smash Burgers",
-        columns: [
-          { title: "Burgers", items: [
-            { name: "Single Smash", price: "£6.50" },
-            { name: "Double Smash", price: "£8.50" },
-            { name: "Bacon & Cheese", price: "£9.50" },
-          ]},
-          { title: "Add-ons", items: [
-            { name: "Extra Patty", price: "£2.50" },
-            { name: "Crispy Onions", price: "£1.00" },
-          ]},
-        ],
-        sample: { img: IMAGES.smashBurgerGrill, caption: "Our signature double smash." },
-      },
-      {
-        id: "loaded-fries",
-        name: "Loaded Fries",
-        columns: [
-          { title: "Loaded", items: [
-            { name: "Dirty Bird", price: "£8.50" },
-            { name: "Chilli Cheese", price: "£8.00" },
-            { name: "Cheese & Bacon", price: "£7.50" },
-          ]},
-        ],
-        sample: { img: IMAGES.loadedFriesPickles, caption: "Golden, crispy, loaded." },
-      },
-      {
-        id: "desserts",
-        name: "Desserts",
-        columns: [
-          { title: "Sweet Treats", items: [
-            { name: "Brownie Bites", price: "£4.00" },
-            { name: "Tiramisu Cup", price: "£4.50" },
-            { name: "Nutella Crepe", price: "£6.00" },
-          ]},
-        ],
-        sample: { img: IMAGES.nutellaCrepe, caption: "Send them home happy." },
-      },
-      {
-        id: "drinks",
-        name: "Drinks",
-        columns: [
-          { title: "Cold", items: [
-            { name: "Cans (assorted)", price: "£1.50" },
-            { name: "Bottled Water", price: "£1.00" },
-          ]},
-        ],
-        sample: { img: IMAGES.smashBurger, caption: "Event drink packages available." },
-      },
-    ],
-  },
 ];
 
 // Coming-soon van (teaser only, no detail page)
 export const COMING_SOON = {
-  id: "van-3",
-  name: "Van No. 3",
+  id: "van-2",
+  name: "Coming Soon",
   type: "van",
-  tagline: "A third van is on the way — bigger menus, more events, coming soon.",
-  cardImg: IMAGES.trailerFullWrap,
+  tagline: "A second van is on the way — more menus, more events. Watch this space.",
+  cardImg: IMAGES.trailerRearSun,
 };
 
 export const TRAILERS_BY_ID = Object.fromEntries(TRAILERS.map((t) => [t.id, t]));

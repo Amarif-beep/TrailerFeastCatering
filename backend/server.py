@@ -121,7 +121,7 @@ class BookingCreate(BaseModel):
     phone: str = Field(..., min_length=5, max_length=40)
     trailer_id: str = Field(..., min_length=1)
     event_date: str = Field(..., min_length=1)
-    event_location: str = Field(..., min_length=1, max_length=240)
+    event_location: Optional[str] = Field(default="", max_length=240)
     event_type: str = Field(..., min_length=1)
     guest_count: int = Field(..., ge=1, le=5000)
     electricity_available: bool = False
@@ -168,15 +168,16 @@ async def get_trailer(trailer_id: str):
 
 @api_router.get("/availability/{trailer_id}")
 async def get_availability(trailer_id: str):
-    """Return list of booked ISO dates (YYYY-MM-DD) for a trailer."""
+    """Return confirmed (booked) and new (pending) ISO dates for a trailer."""
     if trailer_id not in TRAILERS_BY_ID:
         raise HTTPException(status_code=404, detail="Trailer not found")
     rows = await db.bookings.find(
         {"trailer_id": trailer_id, "status": {"$in": ["new", "confirmed"]}},
-        {"_id": 0, "event_date": 1},
+        {"_id": 0, "event_date": 1, "status": 1},
     ).to_list(2000)
-    booked = sorted({r["event_date"] for r in rows if r.get("event_date")})
-    return {"trailer_id": trailer_id, "booked_dates": booked}
+    booked = sorted({r["event_date"] for r in rows if r.get("event_date") and r.get("status") == "confirmed"})
+    pending = sorted({r["event_date"] for r in rows if r.get("event_date") and r.get("status") != "confirmed"})
+    return {"trailer_id": trailer_id, "booked_dates": booked, "pending_dates": pending}
 
 
 @api_router.post("/bookings", response_model=Booking, status_code=201)

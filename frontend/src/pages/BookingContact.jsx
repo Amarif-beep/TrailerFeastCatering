@@ -6,7 +6,7 @@ import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 import MobileBookBar from "../components/MobileBookBar";
 import AvailabilityCalendar from "../components/AvailabilityCalendar";
-import { TRAILERS } from "../lib/trailers";
+import { TRAILERS, COMING_SOON } from "../lib/trailers";
 import { CONTACT, SOCIALS } from "../lib/content";
 
 const EVENT_TYPES = ["Private Party", "Wedding", "Corporate Event", "Festival", "Birthday", "Pub Night", "Other"];
@@ -20,7 +20,7 @@ export default function BookingContact() {
 
   const [vanId, setVanId] = useState(initialVan);
   const [form, setForm] = useState({
-    name: "", email: "", phone: "", event_date: "", event_location: "",
+    name: "", email: "", phone: "", event_date: "",
     event_type: EVENT_TYPES[0], guest_count: "", power: POWER[0], message: "",
   });
   const [submitting, setSubmitting] = useState(false);
@@ -46,7 +46,7 @@ export default function BookingContact() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: form.name, email: form.email, phone: form.phone,
-          trailer_id: vanId, event_date: form.event_date, event_location: form.event_location,
+          trailer_id: vanId, event_date: form.event_date,
           event_type: form.event_type, guest_count: parseInt(form.guest_count, 10) || 1,
           electricity_available: form.power.startsWith("Yes"), message: form.message,
         }),
@@ -117,6 +117,18 @@ export default function BookingContact() {
                 </button>
               );
             })}
+            {/* Coming soon (not selectable) */}
+            <div data-testid="choose-van-coming-soon" className="relative text-left rounded-lg overflow-hidden border-2 border-[#322a20] opacity-70">
+              <div className="h-36 overflow-hidden relative">
+                <img src={COMING_SOON.cardImg} alt="" className="w-full h-full object-cover grayscale opacity-40" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="font-display uppercase text-[#c9a04e] text-sm tracking-[0.18em] border border-[#c9a04e] px-3 py-1 rotate-[-4deg]">Coming Soon</span>
+                </div>
+              </div>
+              <div className="p-4 bg-[#1a1611] text-[#8a8172]">
+                <span className="font-display uppercase text-sm tracking-wide">Van No. 2</span>
+              </div>
+            </div>
           </div>
 
           {/* Calendar + form */}
@@ -164,10 +176,6 @@ export default function BookingContact() {
                   <div>
                     <label className="label-pro">Number of Guests *</label>
                     <input data-testid="booking-guests" type="number" min={1} required className="input-pro" placeholder="Enter number" value={form.guest_count} onChange={update("guest_count")} />
-                  </div>
-                  <div className="sm:col-span-2">
-                    <label className="label-pro">Location *</label>
-                    <input data-testid="booking-location" required className="input-pro" placeholder="Enter location / postcode" value={form.event_location} onChange={update("event_location")} />
                   </div>
                   <div className="sm:col-span-2">
                     <label className="label-pro">Power Available</label>
