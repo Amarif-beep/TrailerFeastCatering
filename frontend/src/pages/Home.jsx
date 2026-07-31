@@ -4,8 +4,6 @@ import { Truck, Settings, UtensilsCrossed, Home as HomeIcon, CheckCircle2, Calen
 import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 import MobileBookBar from "../components/MobileBookBar";
-import MenuShowcase from "../components/sections/MenuShowcase";
-import GallerySection from "../components/sections/GallerySection";
 import Reveal from "../components/Reveal";
 import { TRAILERS, COMING_SOON, WHY_BOOK } from "../lib/trailers";
 import { IMAGES, REVIEWS } from "../lib/content";
@@ -78,10 +76,10 @@ export default function Home() {
 
             {/* Coming soon */}
             <div data-testid="van-card-coming-soon" className="relative bg-[#1a1611] border border-[#322a20] rounded-lg overflow-hidden h-full flex flex-col">
-                <div className="h-48 overflow-hidden relative">
-                  <img src={COMING_SOON.cardImg} alt="" className="w-full h-full object-cover opacity-40 grayscale" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-display uppercase text-[#c9a04e] text-lg tracking-[0.2em] border-2 border-[#c9a04e] px-4 py-2 rotate-[-4deg]">Coming Soon</span>
+                <div className="h-48 overflow-hidden relative bg-black">
+                  <img src={COMING_SOON.cardImg} alt={COMING_SOON.name} className="w-full h-full object-contain" />
+                  <div className="absolute top-3 left-1/2 -translate-x-1/2">
+                    <span className="font-display uppercase text-[#c9a04e] text-xs tracking-[0.2em] bg-black/70 border border-[#c9a04e] px-3 py-1 rounded">Coming Soon</span>
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-1 text-center">
@@ -95,12 +93,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* MENU */}
-      <MenuShowcase />
-
-      {/* GALLERY */}
-      <GallerySection />
 
       {/* WHY BOOK WITH US */}
       <section data-testid="why-book-section" className="relative py-16 md:py-24 px-5 md:px-8 bg-[#0f0d0b]">

@@ -122,10 +122,10 @@ export const TRAILERS = [
 // Coming-soon van (teaser only, no detail page)
 export const COMING_SOON = {
   id: "van-2",
-  name: "Coming Soon",
+  name: "The Hungarian Lakoma",
   type: "van",
-  tagline: "A second van is on the way — more menus, more events. Watch this space.",
-  cardImg: IMAGES.trailerRearSun,
+  tagline: "Authentic Hungarian cuisine — tradition, flavour & hospitality. Launching soon.",
+  cardImg: "https://customer-assets-4nw71qhi.emergentagent.net/job_graffiti-grub/artifacts/2hxsw0a6_JPEG%20image-44C2-99FB-C1-0.jpeg",
 };
 
 export const TRAILERS_BY_ID = Object.fromEntries(TRAILERS.map((t) => [t.id, t]));

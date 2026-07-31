@@ -150,7 +150,6 @@ export default function BookingContact() {
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-center gap-3 text-[#f5f1e8] font-body"><Phone size={16} className="text-[#c9a04e]" /> <a href={`tel:${CONTACT.phone.replace(/\s/g, "")}`} className="hover:text-[#c9a04e]">{CONTACT.phone}</a></li>
                     <li className="flex items-center gap-3 text-[#f5f1e8] font-body"><Mail size={16} className="text-[#c9a04e]" /> <a href={`mailto:${CONTACT.email}`} className="hover:text-[#c9a04e] break-all">{CONTACT.email}</a></li>
-                    <li className="flex items-center gap-3 text-[#f5f1e8] font-body"><MapPin size={16} className="text-[#c9a04e]" /> Daventry, Northamptonshire</li>
                   </ul>
                   <div className="flex gap-2 mt-4 pt-4 border-t border-[#322a20]">
                     <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-full border border-[#322a20] flex items-center justify-center text-[#c9a04e] hover:bg-[#c9a04e] hover:text-[#17130d] transition-colors"><Facebook size={16} /></a>

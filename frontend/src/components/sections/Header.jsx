@@ -6,8 +6,6 @@ import { LOGO_URL } from "../../lib/content";
 const NAV = [
   { label: "Home", to: "/" },
   { label: "Our Vans", to: "/#vans" },
-  { label: "Menu", to: "/#menu" },
-  { label: "Gallery", to: "/#gallery" },
   { label: "Book & Contact", to: "/book" },
 ];
 
