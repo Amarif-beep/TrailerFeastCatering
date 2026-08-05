@@ -19,7 +19,13 @@ export const TRAILERS = [
     accent: "#c9a04e",
     hero: IMAGES.trailerCloseup,
     cardImg: IMAGES.trailerCloseup,
-    gallery: [IMAGES.trailerFullWrap, IMAGES.trailerBackName, IMAGES.trailerRearSun, IMAGES.trailerRear, IMAGES.trailerSide, IMAGES.pulledPorkSpud],
+    gallery: [
+      "https://customer-assets-4nw71qhi.emergentagent.net/job_graffiti-grub/artifacts/xozcipst_9d38886c-cbb3-4000-960b-a16db5a94041.JPG",
+      "https://customer-assets-4nw71qhi.emergentagent.net/job_graffiti-grub/artifacts/24rl8o1k_5da440cc-cd7d-4973-a5a3-3b7ddbb504ef.JPG",
+      "https://customer-assets-4nw71qhi.emergentagent.net/job_graffiti-grub/artifacts/q13csqau_04e7f1e1-d8ea-4c32-89db-1a31449f734e.JPG",
+      "https://customer-assets-4nw71qhi.emergentagent.net/job_graffiti-grub/artifacts/4slp192z_2abcbd66-2067-4dc8-a7de-6725a1cbf458.JPG",
+      "https://customer-assets-4nw71qhi.emergentagent.net/job_graffiti-grub/artifacts/44i8ohf3_0f172348-9d19-4e21-a5f6-8124208b45f8.JPG",
+    ],
     description:
       "Our flagship trailer serving a wide range of freshly made food. From loaded jacket potatoes and fries to smash burgers and sweet treats — there's something for everyone.",
     specs: {
