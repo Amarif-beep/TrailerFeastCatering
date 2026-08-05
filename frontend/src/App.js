@@ -3,13 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import VanDetail from "./pages/VanDetail";
 import BookingContact from "./pages/BookingContact";
-import SmoothScroll from "./components/SmoothScroll";
 import { Toaster } from "sonner";
 
 function App() {
   return (
     <div className="App">
-      <SmoothScroll />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
