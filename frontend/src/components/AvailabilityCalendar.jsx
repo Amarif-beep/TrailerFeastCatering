@@ -31,17 +31,23 @@ export default function AvailabilityCalendar({ trailerId, accent = "#c9a04e", on
 
   const toISO = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 
+  // Manual availability override: only these ISO dates are bookable.
+  // Everything else in the future is shown as unavailable (booked / red).
+  const AVAILABLE_ONLY = new Set(["2026-08-23"]);
+
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
   const isBooked = (d) => bookedSet.has(toISO(d));
   const isPending = (d) => pendingSet.has(toISO(d));
   const isPast = (d) => d < today;
-  const isAvailable = (d) => !isPast(d) && !isBooked(d) && !isPending(d);
+  const isManuallyUnavailable = (d) => !isPast(d) && !AVAILABLE_ONLY.has(toISO(d));
+  const isAvailable = (d) =>
+    !isPast(d) && AVAILABLE_ONLY.has(toISO(d)) && !isBooked(d) && !isPending(d);
 
   const modifiers = {
-    booked: (d) => isBooked(d),
-    pending: (d) => isPending(d),
+    booked: (d) => isBooked(d) || isManuallyUnavailable(d),
+    pending: (d) => isPending(d) && !isManuallyUnavailable(d),
     available: (d) => isAvailable(d),
   };
 
@@ -69,7 +75,7 @@ export default function AvailabilityCalendar({ trailerId, accent = "#c9a04e", on
           mode="single"
           selected={selected}
           onSelect={handleSelect}
-          disabled={[{ before: today }, (d) => isBooked(d) || isPending(d)]}
+          disabled={[{ before: today }, (d) => isBooked(d) || isPending(d) || isManuallyUnavailable(d)]}
           modifiers={modifiers}
           modifiersStyles={modifiersStyles}
           weekStartsOn={1}

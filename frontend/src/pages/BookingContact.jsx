@@ -164,7 +164,8 @@ export default function BookingContact() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="sm:col-span-2">
                     <label className="label-pro">Event Date *</label>
-                    <input data-testid="booking-date" type="date" required className="input-pro" value={form.event_date} onChange={update("event_date")} />
+                    <input data-testid="booking-date" type="date" required className="input-pro" min="2026-08-23" max="2026-08-23" value={form.event_date} onChange={update("event_date")} />
+                    <p className="text-xs text-[#8a8172] font-body mt-1">Only 23 August 2026 is currently available — more dates opening soon.</p>
                   </div>
                   <div>
                     <label className="label-pro">Event Type *</label>
