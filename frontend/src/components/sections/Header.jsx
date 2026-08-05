@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu as MenuIcon, X } from "lucide-react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { LOGO_URL } from "../../lib/content";
 
 const NAV = [
@@ -45,8 +46,16 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-3 flex items-center justify-between">
-        <Link to="/" onClick={() => window.scrollTo(0, 0)} data-testid="header-logo-btn" className="flex items-center gap-2">
-          <img src={LOGO_URL} alt="The Hungry Trailer" className="h-11 md:h-12 w-auto object-contain rounded" />
+        <Link to="/" onClick={() => window.scrollTo(0, 0)} data-testid="header-logo-btn" className="flex items-center gap-2 group">
+          <motion.img
+            initial={{ opacity: 0, y: -8, scale: 0.94 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
+            whileHover={{ scale: 1.03, rotate: -0.5 }}
+            src={LOGO_URL}
+            alt="Trailer Feast Catering"
+            className="h-14 md:h-16 w-auto object-contain drop-shadow-[0_4px_18px_rgba(201,160,78,0.25)]"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-2">

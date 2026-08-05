@@ -1,47 +1,55 @@
-# The Hungry Trailer — Marketing Site PRD
+# Trailer Feast Catering — Marketing Site PRD
 
 ## Problem statement
-Build a graffiti-art-style marketing website for **The Hungry Trailer** food truck (Daventry, UK). Includes hero, menu (4 categories), about story, reviews, find us, event booking form, and footer.
-
-## User choices (Dec 2025)
-- Marketing site + event booking form
-- Sample/placeholder menu items & prices
-- Use uploaded logo prominently
-- Graffiti vibe — black bg + cream/blue/pink/orange accents
+Premium marketing + booking site for a fleet of UK catering trailers (formerly "The Hungry Trailer"). One active trailer + one "coming soon" (The Hungarian Lakoma). Three routes: Home, Van Detail, Book & Contact. Live availability calendar and event booking form.
 
 ## Personas
-- **Daventry locals** — find menu, hours, location, phone
-- **Event organisers** — book the trailer for weddings/festivals/corporate
-- **Repeat customers** — read reviews, share with friends
+- **Event organisers** — book a trailer for weddings/festivals/corporate
+- **Locals** — browse menu / gallery / specs
+- **Repeat customers** — see reviews, share with friends
 
 ## Architecture
-- **Backend**: FastAPI + MongoDB (`bookings`, `contacts`, `status_checks` collections)
-- **Frontend**: React + TailwindCSS, Bungee/Permanent Marker/Bricolage Grotesque fonts, sonner toasts
-- **Sections**: Header, Hero, Marquee, Menu, About, Reviews, FindUs (OpenStreetMap iframe), Booking, Footer
+- **Backend**: FastAPI + MongoDB (`bookings` collection with double-booking prevention)
+- **Frontend**: React 19 + TailwindCSS + framer-motion + Lenis smooth scroll
+- **Fonts**: Big Shoulders Display (headings), Newsreader italic (editorial accents), Bricolage Grotesque (body)
+- **Design language**: Premium dark charcoal + gold, cinematic hero with parallax + masked line-by-line reveal (framer-motion), editorial marquee, numbered manifesto chapters, film-grain overlays
+
+## Routes
+- `/` — Home
+- `/vans/:id` — Van Detail (includes gallery + menu tabs)
+- `/book` — Booking form + live availability calendar
 
 ## API endpoints
-- `GET /api/` — health
-- `GET /api/menu` — 4-category menu
-- `POST /api/bookings` / `GET /api/bookings`
-- `POST /api/contact`
+- `GET /api/trailers`
+- `GET /api/trailers/{id}`
+- `GET /api/availability/{id}`
+- `POST /api/bookings`
 
-## Implemented (Dec 2025)
-- ✅ Full graffiti-styled homepage with all 8 sections
-- ✅ Menu tab switcher (Spuds / Fries / Crepes / Hungarian) with sample items + prices
-- ✅ Real customer reviews from FB (9 cards with rotation + colored brutalist shadows)
-- ✅ Event booking form with validation & success state
-- ✅ OpenStreetMap embed + hours table + clickable phone/email
-- ✅ Tested end-to-end (100% backend, 100% frontend pass)
+## Data model
+`bookings`: `{ _id, name, email, phone, trailer_id, event_date, event_type, guests, electricity_available, message, status, created_at }`
+_(`event_location` intentionally removed at user request.)_
+
+## Implemented (July 2026)
+- ✅ Home restructured: Menu + Gallery removed → moved to Van Detail
+- ✅ "Location" removed sitewide (booking + backend)
+- ✅ Coming Soon card uses The Hungarian Lakoma logo
+- ✅ **[Aug 2026] New "Trailer Feast Catering" logo installed top-left** (larger, drop-shadow glow, on-load motion)
+- ✅ **[Aug 2026] Award-worthy elevation:**
+  - Lenis global smooth momentum scroll (`SmoothScroll.jsx`)
+  - Kinetic hero: parallax bg (framer `useScroll` + `useTransform`), masked line-by-line reveal (`MaskedLines.jsx`), "01 — Street Food Season" chapter tag, vertical side rail, animated scroll cue
+  - Editorial marquee (`EditorialMarquee.jsx`) — slow gold serif italic phrases with dot separators
+  - Numbered manifesto: Chapters 01/02/03 with giant Newsreader italic numerals
+  - Framer-motion micro-interactions on van cards, WHY BOOK icons, reviews, CTA
+  - Editorial italic accents ("The Fleet", "Why book with us?", "Done right.")
+  - Film-grain overlay on dark sections (`.grain`)
 
 ## Backlog / P1
-- Real menu & prices from operator
-- Real social media links (currently `#`)
-- Photo gallery of food & events
-- Email notification when a booking is submitted (Resend/SendGrid integration)
-- Admin view for bookings
+- Activate "Hungarian Lakoma" trailer as a full detail page (needs menu, prices, specs, interior/exterior photos)
+- Real social media links (currently defaults in `content.js`)
+- Email notification on booking submit (Resend integration)
+- Trailer-level dynamic gallery (upload endpoint)
 
 ## P2
-- Online ordering / pre-order pickup
-- Event calendar (where the truck is each week)
-- Instagram feed embed
-- SEO meta tags + Open Graph image
+- Photo gallery lightbox
+- Multi-trailer combined booking flow
+- Testimonial submission form

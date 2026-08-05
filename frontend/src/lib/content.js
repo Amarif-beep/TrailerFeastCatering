@@ -1,7 +1,7 @@
 import React from "react";
 
 export const LOGO_URL =
-  "https://customer-assets.emergentagent.com/job_7a3d9668-5e2a-4438-96f9-64c3e2392017/artifacts/3czqxrua_547940258_122126469344953077_440697955309747378_n-2.jpg";
+  "https://customer-assets-4nw71qhi.emergentagent.net/job_graffiti-grub/artifacts/1lagw8by_2D9ADFED-3222-41E9-81CF-026392DE0C62.PNG";
 
 // Real photos from The Hungry Trailer.
 export const IMAGES = {
