@@ -18,7 +18,7 @@ export const TRAILERS = [
     tagline: "Our flagship trailer serving jacket potatoes, loaded fries, smash burgers and delicious desserts.",
     accent: "#c9a04e",
     hero: IMAGES.trailerCloseup,
-    cardImg: IMAGES.trailerCloseup,
+    cardImg: "https://customer-assets-4nw71qhi.emergentagent.net/job_graffiti-grub/artifacts/jhdaudnl_547940258_122126469344953077_440697955309747378_n-2.jpg",
     gallery: [
       "https://customer-assets-4nw71qhi.emergentagent.net/job_graffiti-grub/artifacts/xozcipst_9d38886c-cbb3-4000-960b-a16db5a94041.JPG",
       "https://customer-assets-4nw71qhi.emergentagent.net/job_graffiti-grub/artifacts/24rl8o1k_5da440cc-cd7d-4973-a5a3-3b7ddbb504ef.JPG",

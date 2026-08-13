@@ -18,11 +18,7 @@ export default function Home() {
       <Header />
 
       {/* HERO */}
-      <section id="hero" data-testid="hero-section" className="relative min-h-[92vh] flex items-center pt-24 pb-12 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={IMAGES.trailerRearSun} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0f0d0b] via-[#0f0d0b]/85 to-[#0f0d0b]/30" />
-        </div>
+      <section id="hero" data-testid="hero-section" className="relative min-h-[92vh] flex items-center pt-24 pb-12 overflow-hidden bg-black">
         <div className="relative max-w-7xl mx-auto px-5 md:px-8 w-full">
           <div className="max-w-2xl">
             <div className="gold-rule mb-6" />
@@ -61,8 +57,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {TRAILERS.map((t, i) => (
               <div key={t.id} data-testid={`van-card-${t.id}`} className="bg-white border border-[#e2dccd] rounded-lg overflow-hidden h-full flex flex-col group hover:shadow-xl transition-shadow">
-                <div className="h-48 overflow-hidden">
-                  <img src={t.cardImg} alt={t.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div className="h-48 overflow-hidden bg-black">
+                  <img src={t.cardImg} alt={t.name} className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-6 flex flex-col flex-1 text-center">
                   <h3 className="font-display text-[#1a1611] text-2xl uppercase mb-3">{t.name}</h3>
